@@ -1,0 +1,1768 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for the UAntwerpen-modules repository">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
+    
+    
+      
+        <title>Yambo - UAntwerpen-modules documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2d9f7617.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#yambo" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="UAntwerpen-modules documentation" class="md-header__button md-logo" aria-label="UAntwerpen-modules documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            UAntwerpen-modules documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Yambo
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent=""  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../index.html#a" class="md-tabs__link">
+      a
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../index.html#b" class="md-tabs__link">
+      b
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../index.html#c" class="md-tabs__link">
+      c
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../index.html#d" class="md-tabs__link">
+      d
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../index.html#e" class="md-tabs__link">
+      e
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../index.html#f" class="md-tabs__link">
+      f
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../index.html#g" class="md-tabs__link">
+      g
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../index.html#h" class="md-tabs__link">
+      h
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../index.html#i" class="md-tabs__link">
+      i
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../index.html#j" class="md-tabs__link">
+      j
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../index.html#k" class="md-tabs__link">
+      k
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../index.html#l" class="md-tabs__link">
+      l
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../index.html#m" class="md-tabs__link">
+      m
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../index.html#n" class="md-tabs__link">
+      n
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../index.html#o" class="md-tabs__link">
+      o
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../index.html#p" class="md-tabs__link">
+      p
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../index.html#q" class="md-tabs__link">
+      q
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../index.html#r" class="md-tabs__link">
+      r
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../index.html#s" class="md-tabs__link">
+      s
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../index.html#t" class="md-tabs__link">
+      t
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../index.html#u" class="md-tabs__link">
+      u
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../index.html#v" class="md-tabs__link">
+      v
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../index.html#w" class="md-tabs__link">
+      w
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../index.html#x" class="md-tabs__link">
+      x
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../index.html#y" class="md-tabs__link">
+      y
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../index.html#z" class="md-tabs__link">
+      z
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="UAntwerpen-modules documentation" class="md-nav__button md-logo" aria-label="UAntwerpen-modules documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    UAntwerpen-modules documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html#a" class="md-nav__link">
+        a
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html#b" class="md-nav__link">
+        b
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html#c" class="md-nav__link">
+        c
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html#d" class="md-nav__link">
+        d
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html#e" class="md-nav__link">
+        e
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html#f" class="md-nav__link">
+        f
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html#g" class="md-nav__link">
+        g
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html#h" class="md-nav__link">
+        h
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html#i" class="md-nav__link">
+        i
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html#j" class="md-nav__link">
+        j
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html#k" class="md-nav__link">
+        k
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html#l" class="md-nav__link">
+        l
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html#m" class="md-nav__link">
+        m
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html#n" class="md-nav__link">
+        n
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html#o" class="md-nav__link">
+        o
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html#p" class="md-nav__link">
+        p
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html#q" class="md-nav__link">
+        q
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html#r" class="md-nav__link">
+        r
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html#s" class="md-nav__link">
+        s
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html#t" class="md-nav__link">
+        t
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html#u" class="md-nav__link">
+        u
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html#v" class="md-nav__link">
+        v
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html#w" class="md-nav__link">
+        w
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html#x" class="md-nav__link">
+        x
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html#y" class="md-nav__link">
+        y
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html#z" class="md-nav__link">
+        z
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#available-easyconfigs" class="md-nav__link">
+    Available EasyConfigs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-documentation" class="md-nav__link">
+    Technical documentation
+  </a>
+  
+    <nav class="md-nav" aria-label="Technical documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general-information" class="md-nav__link">
+    General information
+  </a>
+  
+    <nav class="md-nav" aria-label="General information">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    Dependencies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#yambo-binaries-updated-for-45x" class="md-nav__link">
+    Yambo binaries (updated for 4.5.x)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#build-process" class="md-nav__link">
+    Build process
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#easybuild" class="md-nav__link">
+    EasyBuild
+  </a>
+  
+    <nav class="md-nav" aria-label="EasyBuild">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#yambo-441" class="md-nav__link">
+    Yambo 4.4.1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#yambo-453-on-intel2020a" class="md-nav__link">
+    Yambo 4.5.3 on intel/2020a
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<p><a href="../..">[package list]</a></p>
+<h1 id="yambo">Yambo</h1>
+<h2 id="available-easyconfigs">Available EasyConfigs</h2>
+<ul>
+<li><a href="Yambo-4.4.1-intel-2020a/">Yambo-4.4.1-intel-2020a.eb</a></li>
+<li><a href="Yambo-4.5.3-intel-2020a-noOpenMP-profile/">Yambo-4.5.3-intel-2020a-noOpenMP-profile.eb</a></li>
+</ul>
+<h2 id="technical-documentation">Technical documentation</h2>
+<ul>
+<li><a href="http://www.yambo-code.org/">Yambo home page</a></li>
+<li><a href="https://github.com/yambo-code/yambo">Yambo development on GitHub</a><ul>
+<li><a href="https://github.com/yambo-code/yambo/releases">GitHub releases</a>. Note that
+    there are often hidden tags on that page, even at the top, hiding newer versions.</li>
+</ul>
+</li>
+<li>The documentation is poor and outdated. Many of the features mentioned do not work
+    anymore or do no exist anymore (such as the test suite), and when installing version
+    4.5, the information about building Yambo was still for 4.4 and some pages even
+    for earlier versions.<ul>
+<li><a href="http://www.yambo-code.org/wiki/index.php?title=Main_Page">Yambo Wiki</a></li>
+<li><a href="http://www.yambo-code.org/forum/">Yambo forum</a> may provide useful information
+    also.</li>
+</ul>
+</li>
+<li>There is a <a href="http://www.yambo-code.org/robots/index.php">scary page with test results</a>,
+    unfortunately the testing is mostly done with a single compiler, GNU Fortran, except
+    for some GPU builds, and with a single set of linear algebra libraries, where it
+    is not even clear where they come from. It may simply be compiles of the reference
+    libraries from NetLib, or maybe OpenBLAS for BLAS (though on our systems that one
+    is called libopenblas.a).</li>
+<li>Some articles that may provide additional information:<ul>
+<li><a href="https://iopscience.iop.org/article/10.1088/1361-648X/ab15d0">Many-body perturbation theory calculations using the yambo code</a>:
+    Likely for yambo 4.4 as that is the most recent version mentioned in the paper,
+    but contains more information than the documentation does.</li>
+</ul>
+</li>
+</ul>
+<h3 id="general-information">General information</h3>
+<h4 id="dependencies">Dependencies</h4>
+<ul>
+<li><a href="https://www.tddft.org/programs/libxc/">libxc</a>: Yambo needs libxc.
+    It however only seems to work with very old versions of libxc. It
+    downloads its own libxc if it cannot find a compatible one.
+    <strong>Search for <code>version.*used</code> in `config/libxc.m4'.</strong></li>
+</ul>
+<h4 id="yambo-binaries-updated-for-45x">Yambo binaries (updated for 4.5.x)</h4>
+<p>Executables in the <code>bin</code> directory:</p>
+<ul>
+<li>Yambo interfaces:<ul>
+<li><code>a2y</code>: ABINIT interface based on binary Fortran files, lways part of the interfaces</li>
+<li><code>e2y</code>: ABINIT interface based on ETSF-IO. Only built when etsf-io support is turned on</li>
+<li><code>p2y</code>: This stands for pwscf-2-yambo, the interface to QuantumESPRESSO.
+    Only built when IOTK is enabled, additional features depending on the HDF5
+    configuration (<code>`--enable-hdf5-p2y-support</code>).</li>
+</ul>
+</li>
+<li>Core of Yambo consists of:<ul>
+<li><code>yambo</code></li>
+<li><code>ypp</code>, the Yambo Post- and Pre-Processing tool</li>
+<li>The Yambo interfaces</li>
+</ul>
+</li>
+<li>The main Makefile suggests 4 Yambo projects:<ul>
+<li>PH:<ul>
+<li>''yambo_ph''</li>
+<li>''ypp_ph''</li>
+</ul>
+</li>
+<li>RT:<ul>
+<li>''yambo_rt''</li>
+<li>''ypp_rt'': Pre-and postpprocessing for <code>`yambo_rt</code></li>
+</ul>
+</li>
+<li>NL:<ul>
+<li>''yambo_nl''</li>
+<li>''ypp_nl'': Pre-and postpprocessing for <code>yambo_nl</code></li>
+</ul>
+</li>
+<li>KERR:<ul>
+<li>''yambo_kerr''</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="build-process">Build process</h4>
+<ul>
+<li>Building with iotk does not make much sense if QuantumESPRESSO supports netCDF/HDF5.
+    It is then better to build with netCDF and HDF5 support.</li>
+<li>The Yambo build process does download its own internal dependencies during the
+    build step. This can be avoided by putting the files into <code>lib/archive</code> beforehand.
+    The problem is that some of those files don't seem to be the regular downloads,
+    but come from elsewhere. E.g., current downloads of <code>libxc</code> don't contain the
+    <code>configure script</code>; it has to be generated with <code>autoreconf -i</code>, but the Yambo
+    build process assumes a file that does contain the configure script already.</li>
+<li>Only in-place builds work. The Makefiles and configure script is buggy as hell
+    and doesn't follow the GNU conventions at all (we checked 4.2.1 and 4.4.1).
+    A proper configure script and associated Makefiles are assumed to distinguish between
+    the source tree (where the <code>configure</code> script is located), the build tree (where
+    <code>configure</code> is run) and the install tree. But the Yambo build process only works
+    OK if all tree are the same (and there is no formal <code>install</code> target for make).
+    Quite often the wrong variable is used in the Makefiles leading to various problems:<ul>
+<li>The Yambo build process has an option to keep object files. That option doesn't
+    seem to work in a non-inplace build as it goes looking for some scripts in the
+    install directory rather than where they are in the build directories. According
+    to the spack package for Yambo, this bug is present since version 4.2.1 ("As of
+    version 4.2.1 there are hard-coded paths that make the build process fail if the
+    target prefix is not the configure directory"). It is definitely still present
+    in the version 4.4.1. There is an configure option to not keep them, but that
+    is pretty useless also due to other bugs.</li>
+<li>A very similar bug also hits in other circumstances. When iotk is enabled, it
+    tries to copy a file to the install directories rather than to the build directories.</li>
+<li>Although Yambo claims to have a <code>make install</code> target it is actually not there
+    (see also remarks in the spack code which confirm this).</li>
+</ul>
+</li>
+<li><code>--enable-dp</code> has a different meaning than what one would expect. When it is set to yes,
+     it effectively promotes variables that would be single precision otherwise to double precision.</li>
+<li>There used to be a test suite and
+     <a href="http://www.yambo-code.org/wiki/index.php?title=Test-suite-simple">it is still mentioned in the documentation</a>.
+     However, the repo is nowhere to be found.</li>
+</ul>
+<p>The conclusion can only be that Yambo can only be compiled in-place due to a very
+buggy and non-standard install procedure.
+Therefore a clean central install is rather difficult. One would have to build
+with <code>--prefix</code> set to the build directory during the configure phase and then
+copy whatever need to be copied. There is also no proper <code>make install</code> support,
+and the configure process has several options that are documented but do not work
+as advertised.</p>
+<h3 id="easybuild">EasyBuild</h3>
+<p>The most elegant solution to compile Yambo is to write a custom EasyBlock
+that does an in-place compile rather than compiling on <code>/dev/shm</code> due to bugs in the
+build procedure. There is however a workaround as a second <code>--prefix</code> argument
+to configure will overwrite the first one.</p>
+<p>As of September 2020, spack only supports up to 4.2.2 (version from May 2018)
+and EasyBuild has given up at version 3.4.2.</p>
+<p>We made our EasyConfig for Yambo 4.4.1 based on
+<a href="https://code.ornl.gov/m9b/spack/-/tree/develop/var/spack/repos/builtin/packages/yambo">the spack recipe for Yambo</a>.</p>
+<h4 id="yambo-441">Yambo 4.4.1</h4>
+<ul>
+<li>Dependencies:<ul>
+<li>Yambo 4.4.1 relies on libxc 2.2.3. The files it auto-downloads are different
+    though from those in the standard libxc repositories (see also the build process).
+    We used an externally compiled version as the Yambo build process otherwise
+    failed.</li>
+<li>Yambo 4.4.1 downloads etsf_io 1.0.4 if needed</li>
+<li>Yambo 4.4.1 downloads iotk 1.2.2. Even though it can be disabled via configure,
+    it shouldn't be disabled as due to bugs in the build process, Yambo will always
+    try to compile some code that needs iotk. It doesn't make much sense though
+    with modern versions of QuantumESPRESSO that use HDF5.</li>
+</ul>
+</li>
+<li>Problems<ul>
+<li>Only an in-place build works, so we had to add <code>--prefix</code> to <code>configopts</code>.
+    Luckily it overwrites the default option added by EasyBuild.</li>
+<li>There is no install target despite claims on some places. Our <code>files_to_copy</code> is
+    derived form the spack recipe.</li>
+<li><code>etsf_io-1.0.4.tar.gz</code> could not be downloaded from the location indicated in the code.</li>
+</ul>
+</li>
+</ul>
+<h4 id="yambo-453-on-intel2020a">Yambo 4.5.3 on intel/2020a</h4>
+<ul>
+<li>Based on the setup of a user who reported problems with 4.4.1</li>
+<li>Yambo 4.5.x still does not support a proper <code>make install</code> (nor a proper
+    <code>make help</code> to get decent information about what the Makefiles support).
+    In fact, giving <code>--prefix</code> to configure and pointing to the directory where you
+    ultimately want to install the software, still causes a failure as it did before,
+    so we still have to use the same trick with <code>--prefix</code> as in earlier versions.</li>
+<li>The use of flags in configure is inconsistent and some have buggy implementations,
+    see below.</li>
+<li>Dependencies downloaded as much as possible by Yambo to let Yambo configure them<ul>
+<li>Exception: FFTW as that needs a patch to compile with Intel.</li>
+<li>We did chech the checsum of unzipped tar files with those that we downloaded
+    manually, and all were different. It is not clear if the Yambo authors made any
+    significant changes or if they simple generated their own tar files from a clone
+    repository which may have, e.g., one file different.</li>
+<li>We did extract the URLs for the dependencies from <code>lib/archive/package.list</code>
+    to download them by EasyBuild and put them in <code>lib/archive</code> to ensure that
+    we can reproduce the install at a later date, even if those links may be dead
+    by then.</li>
+</ul>
+</li>
+<li>--disable-iotk still does not work. Neither does --enable-etsf-io.<ul>
+<li>Contact with the author: ETSF-IO is not used anymore in practice and should
+    be removed in a future version.</li>
+</ul>
+</li>
+<li>We did try to expand all options that the user did not specify to their default
+    options just to make it as reproducible as possible to later versions which may
+    have different defaults.</li>
+<li>We need to unset a number of variables the EasyBuild sets. The most crucial one
+    is <code>CPPFLAGS</code>. If that is set, it may be the trigger for very strange compile
+    problems in some routines such as those in <code>lib/qe_pseudo</code> with compilation failing
+    with an error message about a separator in the Makefile. See the issue below.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Value</th>
+<th>Where?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>--enable-keep-objects</td>
+<td>no (yes needed for debug only)</td>
+<td>yambo_specific.m4</td>
+</tr>
+<tr>
+<td>--enable-keep-src</td>
+<td>no (default)</td>
+<td>yambo_specific.m4</td>
+</tr>
+<tr>
+<td>--enable-keep-extlibs</td>
+<td>yes (default)</td>
+<td>yambo_specific.m4</td>
+</tr>
+<tr>
+<td>--enable-dp</td>
+<td>no (default) BUG</td>
+<td>yambo_specific.m4</td>
+</tr>
+<tr>
+<td>--enable-time-profile</td>
+<td>yes (user+default)</td>
+<td>yambo_specific.m4</td>
+</tr>
+<tr>
+<td>--enable-memory-profile</td>
+<td>yes (user)</td>
+<td>yambo_specific.m4</td>
+</tr>
+<tr>
+<td>--enable-uspp</td>
+<td>no (default)</td>
+<td>yambo_specific.m4</td>
+</tr>
+<tr>
+<td>--enable-msgs-comps</td>
+<td>yes (user, default is no)</td>
+<td>yambo_specific.m4</td>
+</tr>
+<tr>
+<td>--enable-options-check</td>
+<td>yes (default)</td>
+<td>configure.ac</td>
+</tr>
+<tr>
+<td>--enable-debug-flags</td>
+<td>no (default)</td>
+<td>acx_fortran_flags.m4</td>
+</tr>
+<tr>
+<td>--enable-open-mp</td>
+<td>no (default)</td>
+<td>configure.ac</td>
+</tr>
+<tr>
+<td>--enable-mpi</td>
+<td>yes (default+user)</td>
+<td>configure.ac</td>
+</tr>
+<tr>
+<td>--enable-int-linalg</td>
+<td>no (default)</td>
+<td>blas.m4</td>
+</tr>
+<tr>
+<td>--enable-openmp-int-linalg</td>
+<td>no (default)</td>
+<td>blas.m4</td>
+</tr>
+<tr>
+<td>--enable-internal-fftqe</td>
+<td>no (default)</td>
+<td>fft.m4</td>
+</tr>
+<tr>
+<td>--enable-internal-fftsg</td>
+<td>no (default)</td>
+<td>fft.m4</td>
+</tr>
+<tr>
+<td>--enable-3d-fft</td>
+<td>depends on FFT implementation</td>
+<td>fft.m4</td>
+</tr>
+<tr>
+<td>--enable-slepc-linalg</td>
+<td>yes (as we want PETSc and SLEPc)</td>
+<td>petsc_slepc.m4</td>
+</tr>
+<tr>
+<td>--enable-par-linalg</td>
+<td>no (default)</td>
+<td>scalapack.m4</td>
+</tr>
+<tr>
+<td>--enable-netcdf-classic</td>
+<td>no (default)</td>
+<td>netcdf_f90.m4</td>
+</tr>
+<tr>
+<td>--enable-netcdf-hdf5</td>
+<td>no (default)</td>
+<td>netcdf_f90.m4</td>
+</tr>
+<tr>
+<td>--enable-hdf5-comnpression</td>
+<td>no (default)</td>
+<td>netcdf_f90.m4</td>
+</tr>
+<tr>
+<td>--enable-hdf5-par-io</td>
+<td>no (default)</td>
+<td>netcdf_f90.m4</td>
+</tr>
+<tr>
+<td>--enable-hdf5-p2y-support</td>
+<td>no (default)</td>
+<td>netcdf_f90.m4</td>
+</tr>
+<tr>
+<td>--enable-iotk</td>
+<td>yes (default)</td>
+<td>iotk.m4</td>
+</tr>
+<tr>
+<td>--enable-etsf-io</td>
+<td>no (default)</td>
+<td>etsf_io.m4</td>
+</tr>
+<tr>
+<td>--disable-cuda</td>
+<td></td>
+<td>cuda.m4</td>
+</tr>
+<tr>
+<td>--disable-nvtx</td>
+<td></td>
+<td>cuda.m4</td>
+</tr>
+</tbody>
+</table>
+<h5 id="order-of-the-build-process">Order of the build process</h5>
+<ul>
+<li><code>make ext-libs</code>: Build the libraries that need to be downloaded from external
+    sources.<ul>
+<li>The netCDF Fortran build has problems with a parallel build.</li>
+</ul>
+</li>
+<li><code>make int-libs</code>:<ul>
+<li>Builds the external libraries if not yet build</li>
+<li>Build the internal libraries (<code>qe_pseudo</code>, <code>slatec</code>,
+    <code>math77</code>, <code>`local</code>)</li>
+</ul>
+</li>
+<li><code>make yambo</code>:<ul>
+<li>Builds the internal and external libraries if not yet build</li>
+<li>Builds <code>yambo</code>.</li>
+</ul>
+</li>
+<li><code>make ypp</code>:<ul>
+<li>Builds the internal and external libraries if not yet build</li>
+<li>Builds <code>ypp</code></li>
+</ul>
+</li>
+<li><code>make a2y</code> (if relevant)<ul>
+<li>Builds the internal and external libraries if not yet build</li>
+<li>Builds <code>a2y</code></li>
+</ul>
+</li>
+<li><code>make p2y</code> (if relevant)<ul>
+<li>Builds the internal and external libraries if not yet build</li>
+<li>Builds <code>p2y</code></li>
+</ul>
+</li>
+<li><code>make e2y</code> (if relevant)<ul>
+<li>Builds the internal and external libraries if not yet build</li>
+<li>Builds <code>e2y</code></li>
+</ul>
+</li>
+<li><code>make yambo_ph</code><ul>
+<li>Builds the internal and external libraries if not yet build</li>
+<li>Builds <code>yambo_ph</code></li>
+</ul>
+</li>
+<li><code>make ypp_ph</code><ul>
+<li>Builds the internal and external libraries if not yet build</li>
+<li>Builds <code>ypp_ph</code></li>
+</ul>
+</li>
+<li><code>make yambo_rt</code><ul>
+<li>Builds the internal and external libraries if not yet build</li>
+<li>Builds <code>yambo_rt</code></li>
+</ul>
+</li>
+<li><code>make ypp_rt</code><ul>
+<li>Builds the internal and external libraries if not yet build</li>
+<li>Builds <code>ypp_rt</code></li>
+</ul>
+</li>
+<li><code>make yambo_nl</code><ul>
+<li>Builds the internal and external libraries if not yet build</li>
+<li>Builds <code>yambo_nl</code></li>
+</ul>
+</li>
+<li><code>make ypp_nl</code><ul>
+<li>Builds the internal and external libraries if not yet build</li>
+<li>Builds <code>`ypp_nl</code></li>
+</ul>
+</li>
+<li><code>make yambo_kerr</code><ul>
+<li>Builds the internal and external libraries if not yet build</li>
+<li>Builds <code>yambo_kerr</code></li>
+</ul>
+</li>
+</ul>
+<p>Single-target builds:</p>
+<ul>
+<li><code>make libs</code> is equivalent to <code>make ext-libs int-libs</code></li>
+<li><code>make core</code> is equivalent to <code>make ext-libs int-libs yambo ypp a2y p2y e2y</code>,
+    but leaving out the interfaces that are irrelevant.</li>
+<li><code>make interfaces</code> is a shortcut to build <code>a2y</code>, <code>p2y</code> and <code>e2y</code> in that
+    order.</li>
+<li><code>make ph_project</code> is equivalent to <code>make ext-libs int-libs yambo_ph ypp_ph</code></li>
+<li><code>make rt_project</code> is equivalent to <code>make ext-libs int-libs yambo_rt ypp_rt</code></li>
+<li><code>make nl_project</code> is equivalent to <code>make ext-libs int-libs yambo_nl ypp_nl</code></li>
+<li><code>make kerr_project</code> is equivalent to <code>make ext-libs int-libs yambo_kerr</code></li>
+<li><code>make all</code> is equivalent to <code>make ext-libs int-libs yambo ypp a2y p2y e2y yambo_ph
+    ypp_ph yambo_rt ypp_rt yambo_nl ypp_nl yambo_kerr</code></li>
+</ul>
+<h5 id="issue-with-separators-in-some-makefiles">Issue with separators in some Makefiles</h5>
+<p>The build process for some of the included libraries such as qe_pseudo can fail with
+an error message about a separator in the Makefile. These Makefiles are generated
+by the <code>sbin/make_makefile.sh</code>-script and use hidden <code>.objects</code>-files in the
+library directories.</p>
+<p>The root of the problem is that <code>make_makefile.sh</code> processes those files using
+<code>cpp</code> and relies on the traditional, pre-C99-behaviour when dealing with lines
+in <code>.objects</code> that end with a backslash (to denote continuation lines).
+If the <code>-traditional</code>-flag is missing, <code>.objects</code> can be expanded into something
+that is not legal in a Makefile as the backslashes are removed while the lines
+are not joined together.</p>
+<p>The crucial block of code is
+<div class="highlight"><pre><span></span><code>cp <span class="nv">$cdir</span>/<span class="nv">$ofile</span> <span class="nv">$cdir</span>/<span class="nv">$ofile</span>.c
+<span class="nv">$cpp</span> <span class="nv">$cppflags</span> <span class="nv">$dopts</span> -D_<span class="nv">$os</span> -D_<span class="nv">$target</span> <span class="nv">$cdir</span>/<span class="nv">$ofile</span>.c &gt;&gt; <span class="nv">$cdir</span>/Makefile
+rm -f <span class="nv">$cdir</span>/<span class="nv">$ofile</span>.c
+</code></pre></div>
+in <code>make_makefile.sh.in</code> (and after running <code>configure</code> in <code>make_makefile.sh</code>).
+If the environment variable CPPFLAGS is set when calling <code>configure</code>, <code>$cpp</code>
+contains <code>cpp $CPPFLAGS</code> (with <code>$CPPFLAGS</code> actually expanded) instead of
+<code>cpp -traditional</code>.</p>
+<p>There are two possible solutions
+  * Unset CPPFLAGS in <code>preconfigopts</code> in EasyBuild if the options are not
+    really needed (and they are not needed when using the Intel toolchain).
+  * Patch <code>make_makefile.sh.in</code> to use <code>$cpp -traditional</code> in that line
+    or maybe even simply <code>cpp -traditional</code>.
+Note that configure script will actually select the <code>cpp</code> from GCCcore
+when using the Intel toolchain.</p>
+<h5 id="bug-1-prefix-in-configure">Bug 1: --prefix in configure</h5>
+<p>The standard configure flag <code>--prefix</code> which is used to ensure that a <code>make install</code>
+at the end installs the code in the proper directory, doesn't work as it should.
+In fact, not only is a working <code>make install</code> missing, but pointing <code>--prefix</code>
+to anything else as the build directory causes a failure during the build as the
+code goes looking for include files in the wrong directories.</p>
+<h5 id="bug-2-enable-dp-processing">Bug 2: --enable-dp processing</h5>
+<p>According to the help information of configure, <code>--enable-dp=no</code> should be equivalent to
+<code>--disable-dp</code>, or, given that the default is to configure for single precision, not
+specifying this option. This however does not work and is a bug in the option handling
+for <code>--enable-dp</code>, where only action is taken if nothing is specified or if the value
+is yes, leaving the variable <code>build_precision</code> uninitialized (and causing the build of PETSc
+to fail). The actual bug is in <code>config/yambo_specific.m4</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>enableval</th>
+<th>enable_dp</th>
+<th>def_dp</th>
+<th>build_precision</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>--enable-dp</td>
+<td>yes</td>
+<td>yes</td>
+<td>-D_DOUBLE</td>
+<td>double</td>
+</tr>
+<tr>
+<td>--disable-dp</td>
+<td>no</td>
+<td>no</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>--enable-dp=yes</td>
+<td>yes</td>
+<td>yes</td>
+<td>-D_DOUBLE</td>
+<td>double</td>
+</tr>
+<tr>
+<td>--enable-dp=no</td>
+<td>no</td>
+<td>no</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>/</td>
+<td></td>
+<td></td>
+<td></td>
+<td>single</td>
+</tr>
+</tbody>
+</table>
+<p><code>build_precision</code> is actually left uninitialized when <code>--disable-dp</code> or <code>--enable-dp=no</code>
+is given.</p>
+<p>Solution: in <code>config/yambo_specific.m4</code> (or directly in configure if you don't want
+to regenerate):
+<div class="highlight"><pre><span></span><code><span class="nv">def_dp</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
+<span class="k">if</span> <span class="nb">test</span> x<span class="s2">&quot;</span><span class="nv">$enable_dp</span><span class="s2">&quot;</span> <span class="o">=</span> <span class="s2">&quot;x&quot;</span><span class="p">;</span>    <span class="k">then</span> <span class="nv">enable_dp</span><span class="o">=</span><span class="s2">&quot;no&quot;</span><span class="p">;</span>     <span class="nv">build_precision</span><span class="o">=</span><span class="s2">&quot;single&quot;</span><span class="p">;</span> <span class="k">fi</span>
+<span class="k">if</span> <span class="nb">test</span> x<span class="s2">&quot;</span><span class="nv">$enable_dp</span><span class="s2">&quot;</span> <span class="o">=</span> <span class="s2">&quot;xyes&quot;</span><span class="p">;</span> <span class="k">then</span> <span class="nv">def_dp</span><span class="o">=</span><span class="s2">&quot;-D_DOUBLE&quot;</span><span class="p">;</span> <span class="nv">build_precision</span><span class="o">=</span><span class="s2">&quot;double&quot;</span><span class="p">;</span> <span class="k">fi</span>
+</code></pre></div>
+should become, e.g.,
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="nb">test</span> x<span class="s2">&quot;</span><span class="nv">$enable_dp</span><span class="s2">&quot;</span> <span class="o">=</span> <span class="s2">&quot;x&quot;</span><span class="p">;</span>    <span class="k">then</span> <span class="nv">enable_dp</span><span class="o">=</span><span class="s2">&quot;no&quot;</span><span class="p">;</span> <span class="k">fi</span>
+<span class="nv">def_dp</span><span class="o">=</span><span class="s2">&quot;&quot;</span>
+<span class="nv">build_precision</span><span class="o">=</span><span class="s2">&quot;single&quot;</span>
+<span class="k">if</span> <span class="nb">test</span> x<span class="s2">&quot;</span><span class="nv">$enable_dp</span><span class="s2">&quot;</span> <span class="o">=</span> <span class="s2">&quot;xyes&quot;</span><span class="p">;</span> <span class="k">then</span> <span class="nv">def_dp</span><span class="o">=</span><span class="s2">&quot;-D_DOUBLE&quot;</span><span class="p">;</span> <span class="nv">build_precision</span><span class="o">=</span><span class="s2">&quot;double&quot;</span><span class="p">;</span> <span class="k">fi</span>
+</code></pre></div>
+(and the first line is only needed if you want to ensure that <code>enable_dp</code> is not
+empty which may help avoiding trouble further down the configure script.)
+This would be robust even if the user made a typo (e.g., specifying <code>`--enable-dp=ja</code>),
+but no error message would be shown.</p>
+<p>Even safer would be:
+<div class="highlight"><pre><span></span><code><span class="k">if</span>   <span class="nb">test</span> x<span class="s2">&quot;</span><span class="nv">$enable_dp</span><span class="s2">&quot;</span> <span class="o">=</span> <span class="s2">&quot;x&quot;</span><span class="p">;</span>    <span class="k">then</span> <span class="nv">enable_dp</span><span class="o">=</span><span class="s2">&quot;no&quot;</span><span class="p">;</span> <span class="k">fi</span>
+<span class="k">if</span>   <span class="nb">test</span> x<span class="s2">&quot;</span><span class="nv">$enable_dp</span><span class="s2">&quot;</span> <span class="o">=</span> <span class="s2">&quot;xno&quot;</span><span class="p">;</span>  <span class="k">then</span> <span class="nv">def_dp</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">;</span> <span class="nv">build_precision</span><span class="o">=</span><span class="s2">&quot;single&quot;</span><span class="p">;</span>
+<span class="k">elif</span> <span class="nb">test</span> x<span class="s2">&quot;</span><span class="nv">$enable_dp</span><span class="s2">&quot;</span> <span class="o">=</span> <span class="s2">&quot;xyes&quot;</span><span class="p">;</span> <span class="k">then</span> <span class="nv">def_dp</span><span class="o">=</span><span class="s2">&quot;-D_DOUBLE&quot;</span><span class="p">;</span> <span class="nv">build_precision</span><span class="o">=</span><span class="s2">&quot;double&quot;</span><span class="p">;</span>
+<span class="k">else</span>
+  AC_MSG_ERROR<span class="o">([</span>Illegal value <span class="k">for</span> --enable-dp<span class="o">])</span>
+<span class="k">fi</span>
+</code></pre></div></p>
+<p>There are many more cases where the code in the configure script could be made more
+robust in this way, though it doesn't seem to be common practice to do so.</p>
+<p>SUBMITTED AS <a href="https://github.com/yambo-code/yambo/issues/31">ISSUE #31</a></p>
+<h5 id="bug-3-disable-iotk-does-not-work">Bug 3: --disable-iotk does not work</h5>
+<p>When disabling IOTK, compilation fails in <code>lib/qe_pseudo/read_upf_v2.f90</code>
+as it still tries to call IOTK functions.</p>
+<p>SUBMITTED AS <a href="https://github.com/yambo-code/yambo/issues/30">ISSUE #30</a>.</p>
+<h5 id="bug-4-enable-etsf-io-does-not-work-if-no-library-is-given-with-the-with-options">Bug 4: --enable-etsf-io does not work if no library is given with the --with-options</h5>
+<p>The build process fails to download the etsf-io package. TThe cause is a download failure, leaving an empty file.</p>
+<p>The download is done by the Makefile in <code>lib/archive</code>. On our system, this executes
+the command
+<div class="highlight"><pre><span></span><code>wget --no-check-certificate -O etsf_io-1.0.4.tar.gz https://github.com/yambo-code/yambo/files/845218/
+</code></pre></div>
+This is not what is intended, and the cause is a typo in package.list. Line 56 should
+read
+<div class="highlight"><pre><span></span><code><span class="nv">url_etsf_io</span><span class="o">=</span>https://github.com/yambo-code/yambo/files/845218/<span class="k">$(</span>tarball_etsf_io<span class="k">)</span>
+</code></pre></div>
+(the <code>_io</code> at the end is missing).</p>
+<p>SUBMITTED AS <a href="https://github.com/yambo-code/yambo/issues/29">ISSUE #29</a>.</p>
+<h5 id="bug-5-the-versions-of-petsc-and-slepc-that-are-being-used-are-so-old-they-still-requires-python-2">Bug 5: The versions of PETSc and SLEPc that are being used are so old they still requires Python 2</h5>
+<p>The versions of PETSc and SLEPc that are included in Yambo 4.5.3 still require that <code>python</code>
+points to a Python 2 interpreter. As Python 2 is no longer maintained, more and more
+operating systems default to Python 3 so Yambo fails to configure PETSc.</p>
+<p>Workaround: Modify <code>Makefile.loc</code> to call <code>python2 ./configure ...</code> rather then
+simply <code>./configure ...</code>. It is definitely easier for system manager to make sure
+that there is still a Python 2 on their systems that can be called as <code>python2</code>
+then to change the default <code>python</code> back to Python 2 just to compile Yambo.</p>
+<p>A better solution would be to use a more recent version of PETSc and SLEPc as they
+support both Python 2.7 and 3.4+.</p>
+<p>UPDATE: This appears to be fixed in the (as of writing) upcoming version 5.0, where
+much more recent versions of PETSc and SLEPc are used.</p>
+<h5 id="bug-6-processing-of-enable-keep-src">Bug 6: Processing of --enable-keep-src</h5>
+<p>Not exactly a bug, but there is something strange in <code>config/yambo_specific.m4</code>:
+<div class="highlight"><pre><span></span><code><span class="k">if</span> <span class="nb">test</span> x<span class="s2">&quot;</span><span class="nv">$enable_keep_src</span><span class="s2">&quot;</span> <span class="o">=</span> <span class="s2">&quot;x&quot;</span><span class="p">;</span>    <span class="k">then</span> <span class="nv">enable_keep_src</span><span class="o">=</span><span class="s2">&quot;no&quot;</span> <span class="p">;</span> <span class="k">fi</span>
+<span class="k">if</span> <span class="nb">test</span> x<span class="s2">&quot;</span><span class="nv">$enable_keep_src</span><span class="s2">&quot;</span> <span class="o">=</span> <span class="s2">&quot;xyes&quot;</span><span class="p">;</span> <span class="k">then</span> <span class="nv">enable_keep_src</span><span class="o">=</span><span class="s2">&quot;yes&quot;</span><span class="p">;</span> <span class="k">fi</span>
+</code></pre></div>
+What is the point of the second line? If <code>enable_keep_src</code> is <code>yes</code> we set it
+again to <code>yes</code>?</p>
+<h5 id="bug-7-inconsistent-handling-of-with-libs-options-and-corresponding-enable-options">Bug 7: Inconsistent handling of <code>--with-*-libs</code>-options and corresponding <code>--enable-*</code> options</h5>
+<p>In some cases, <code>--with-*-libs=no</code> will disable that feature, while in most cases
+it is assumed that that option if specified refers to a set of options for the link
+line and should not be either <code>yes</code> or <code>no</code>.</p>
+<ul>
+<li>The problem is that <code>--with-petsc-libs</code> and <code>--with-slepc-libs</code> are given a double
+    meaning that way and function also as <code>--with-petsc</code> and <code>--with-slepc</code>. They
+    can overwrite the effect of <code>--enable-slepc-linalg</code>.</li>
+<li><code>--enable-par-linalg</code> does not just enable BLACS and ScaLAPACK but enforces
+    internally compiled ones. So you should omit the flag or set it to no if you want
+    to use an external BLACS/ScaLAPACK which is very confusing.</li>
+<li>Other <code>--enable-*</code> flags work a bit more as expected though it looks like a value
+    of <code>no</code> can be overwritten by <code>--with-*-libs</code> and similar options, which may
+    not be a good idea.</li>
+</ul>
+<p>Another thing that is not taken into account is that on some supercomputers (or workstations
+set up the same way) there are environment variables that point to the libraries and
+the include files so that compilers may find them without `-L<code>and</code>-I<code>-options,
+which is why</code>--enable-<feature><code>or</code>--with-<feature>`` flags make sense.</p>
+<h5 id="bug-8-build-process-of-libxc">Bug 8: Build process of libxc</h5>
+<p>The build process does not support a parallel make due to errors in the dependencies.
+So sometimes the compiler tries to open a module file that is not yet generated.</p>
+<h5 id="missing-information">Missing information</h5>
+<ul>
+<li>BLAS:<ul>
+<li>In which order are BLAS libraries searched for?<ul>
+<li>First those given with the with-options?</li>
+<li>Then there is a list of predefined libraries that is searched for (MKL is
+    not one of them, the list is very outdated, several of those libraries
+    do not exist anymore)</li>
+<li>This can always be overwritten with --enable-int-linalg?</li>
+<li>--enable-openmp-int-linalg does not automatically do --enable-int-linalg?</li>
+</ul>
+</li>
+<li>When are single-threaded BLAS libraries preferred and when should we use
+    multithreaded ones?</li>
+</ul>
+</li>
+<li>FFT: When to use which flag? When is which FFT library preferred? Or can we use
+    multiple at ones? A decision tree would be nice to have.<ul>
+<li>Which FFTW interfaces are used if available?</li>
+<li>Can MKL be used for FFTW, and if so, how? <code>config/fft.m4</code> clearly does something
+    with it.</li>
+<li>It looks like configure first tries to find a FFTW-compatible library specified
+    through the -with-options and then goes on trying other FFT libraries.</li>
+<li>When can we use --enable-3d-fft and when can we not? And the default value is
+    very unclear. It seems to be enabled by default when using the FFT from ESSL.
+    It also seems to be enabled by default if the internal FFT QE (which is also
+    FFTW2) is used. It doesn't seem to be used with the internal FFT SG.</li>
+<li>FFT QE takes precedence over FFT SG and any FFTW-compatible library found if
+    specified.</li>
+<li>FFT SG takes precedense over any FFTW-compatible library found if specified.</li>
+</ul>
+</li>
+<li>The whole story of --enable-slepc-linalg, --with-petsc-libs and --with-slepc-libs
+    is also downright confusing as these options have effect onto each other. Does it make
+    sense to use PETSc without SLEPc? And --with-petsc-libs=no undoes some of the effect
+    of --enable-slepc-linalg.<ul>
+<li>Are there cases where SLEPc makes sense without PETSc? It doesn't seem so.</li>
+<li>Does it make sense to use PETSc without SLEPc? Likely not?</li>
+<li>Do these routines make sense for a non-MPI build?</li>
+</ul>
+</li>
+<li>--enable-par-linalg is confusing. It enforces an internal BLACS and ScaLAPACK.
+    And do the checks take into account that we should have a pETSc library suitably
+    configured according to the requested precision? A warning should also be printed
+    if the flag conflicts the MPI setting (i.e., parallel linear algebra requested
+    for a non-MPI build).</li>
+<li>Which configurations for an external netCDF are supported? It does need the
+    netCDF Fortran interfaces. Furthermore, the following configurations can be
+    generated internally:<ul>
+<li>netCDF without HDF5 support</li>
+<li>netCDF classic, whatever that is</li>
+<li>netCDF with HDF5 support<ul>
+<li>With or without HDF5 compression</li>
+<li>With or without HDF5 parallel I/O.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>--enable-iotk=no</code> will be overwritten if <code>--with-iotk-path</code> points to a directory
+    or if <code>--with-iotk-path</code> points to a directory or if <code>--with-iotk-libs</code> is
+    specified and non-empty.</li>
+</ul>
+<p><code>--enable-slepc-linalg</code> and <code>--enable-par-linalg</code> are very confusing. There should be a
+clear default. Moreover.
+  * if slecpc_linalg is disabled, a warning should be printed that all
+    <code>--with-petsc-*</code> and <code>--with-slepc-*</code> settings are neglected if any of them
+    is given,
+  * if slecpc_linalg is enabled is disabled, it should try to find the corresponding
+    libraries using the <code>--with-slepc-*</code> and <code>--with-petsc-*</code> variables or if
+    these are not given, use internal ones.
+      * Moreover, it may not make sense to use an external SLEPc with an internal
+        PETSc as that one may be incompatible with the external SLEPc.
+  * if par_linalg is disabled, a warning should be printed that all
+    <code>--with-blacs-*</code> and <code>--with-scalapack-*</code> flags will be neglected if any of
+    them is given.
+  * If par_linalg is enabled, the configure script should try to locate suitable
+    BLACS and ScaLAPACK libraries with the help of the <code>--with-blacs-*</code> and
+    <code>--with-scalapack-*</code> flags and if not revert to internal ones. And again it
+    may not make sense to use an external ScaLAPACK with an internal BLACS.</p>
+<p><a href="../..">[package list]</a></p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    <a href="https://github.com/hpcuantwerpen" target="_blank" rel="noopener" title="HPC-UAntwerpen on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "header.autohide", "toc.follow", "content.code.annotate", "search.suggest"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.467223ff.min.js"></script>
+      
+    
+  </body>
+</html>

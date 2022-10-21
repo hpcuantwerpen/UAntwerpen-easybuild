@@ -1,0 +1,1612 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for the UAntwerpen-modules repository">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.2.5">
+    
+    
+      
+        <title>GPAW - UAntwerpen-modules documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.2d9f7617.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#gpaw" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="UAntwerpen-modules documentation" class="md-header__button md-logo" aria-label="UAntwerpen-modules documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            UAntwerpen-modules documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              GPAW
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="" data-md-color-primary="black" data-md-color-accent=""  aria-hidden="true"  type="radio" name="__palette" id="__palette_1">
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../index.html#a" class="md-tabs__link">
+      a
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../index.html#b" class="md-tabs__link">
+      b
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../index.html#c" class="md-tabs__link">
+      c
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../index.html#d" class="md-tabs__link">
+      d
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../index.html#e" class="md-tabs__link">
+      e
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../index.html#f" class="md-tabs__link">
+      f
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../index.html#g" class="md-tabs__link">
+      g
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../index.html#h" class="md-tabs__link">
+      h
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../index.html#i" class="md-tabs__link">
+      i
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../index.html#j" class="md-tabs__link">
+      j
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../index.html#k" class="md-tabs__link">
+      k
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../index.html#l" class="md-tabs__link">
+      l
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../index.html#m" class="md-tabs__link">
+      m
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../index.html#n" class="md-tabs__link">
+      n
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../index.html#o" class="md-tabs__link">
+      o
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../index.html#p" class="md-tabs__link">
+      p
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../index.html#q" class="md-tabs__link">
+      q
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../index.html#r" class="md-tabs__link">
+      r
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../index.html#s" class="md-tabs__link">
+      s
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../index.html#t" class="md-tabs__link">
+      t
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../index.html#u" class="md-tabs__link">
+      u
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../index.html#v" class="md-tabs__link">
+      v
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../index.html#w" class="md-tabs__link">
+      w
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../index.html#x" class="md-tabs__link">
+      x
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../index.html#y" class="md-tabs__link">
+      y
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../index.html#z" class="md-tabs__link">
+      z
+    </a>
+  </li>
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="UAntwerpen-modules documentation" class="md-nav__button md-logo" aria-label="UAntwerpen-modules documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    UAntwerpen-modules documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html#a" class="md-nav__link">
+        a
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html#b" class="md-nav__link">
+        b
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html#c" class="md-nav__link">
+        c
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html#d" class="md-nav__link">
+        d
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html#e" class="md-nav__link">
+        e
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html#f" class="md-nav__link">
+        f
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html#g" class="md-nav__link">
+        g
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html#h" class="md-nav__link">
+        h
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html#i" class="md-nav__link">
+        i
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html#j" class="md-nav__link">
+        j
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html#k" class="md-nav__link">
+        k
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html#l" class="md-nav__link">
+        l
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html#m" class="md-nav__link">
+        m
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html#n" class="md-nav__link">
+        n
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html#o" class="md-nav__link">
+        o
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html#p" class="md-nav__link">
+        p
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html#q" class="md-nav__link">
+        q
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html#r" class="md-nav__link">
+        r
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html#s" class="md-nav__link">
+        s
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html#t" class="md-nav__link">
+        t
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html#u" class="md-nav__link">
+        u
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html#v" class="md-nav__link">
+        v
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html#w" class="md-nav__link">
+        w
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html#x" class="md-nav__link">
+        x
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html#y" class="md-nav__link">
+        y
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../index.html#z" class="md-nav__link">
+        z
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+                
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#available-easyconfigs" class="md-nav__link">
+    Available EasyConfigs
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-documentation" class="md-nav__link">
+    Technical documentation
+  </a>
+  
+    <nav class="md-nav" aria-label="Technical documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    Dependencies
+  </a>
+  
+    <nav class="md-nav" aria-label="Dependencies">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#determining-version-numbers-of-dependencies" class="md-nav__link">
+    Determining version numbers of dependencies
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#internal-organization-of-the-compilation-process-of-gpaw" class="md-nav__link">
+    Internal organization of the compilation process of GPAW
+  </a>
+  
+    <nav class="md-nav" aria-label="Internal organization of the compilation process of GPAW">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#version-1981-and-likely-below" class="md-nav__link">
+    Version 19.8.1 and likely below
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#version-2010-and-likely-above" class="md-nav__link">
+    Version 20.1.0 and likely above
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#variables-for-customizepy-or-siteconfigpy" class="md-nav__link">
+    Variables for customize.py or siteconfig.py
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#easyconfig" class="md-nav__link">
+    EasyConfig
+  </a>
+  
+    <nav class="md-nav" aria-label="EasyConfig">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#general-remarks" class="md-nav__link">
+    General remarks
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2019b-toolchain-gpaw-1981" class="md-nav__link">
+    2019b toolchain - GPAW 19.8.1
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2020a-toolchains-gpaw-2010" class="md-nav__link">
+    2020a toolchains - GPAW 20.1.0
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#checking-the-build-result" class="md-nav__link">
+    Checking the build result
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<p><a href="../..">[package list]</a></p>
+<h1 id="gpaw">GPAW</h1>
+<h2 id="available-easyconfigs">Available EasyConfigs</h2>
+<ul>
+<li><a href="GPAW-19.8.1-intel-2019b-IntelPython3-MKLFFTW/">GPAW-19.8.1-intel-2019b-IntelPython3-MKLFFTW.eb</a></li>
+<li><a href="GPAW-19.8.1-intel-2019b-IntelPython3/">GPAW-19.8.1-intel-2019b-IntelPython3.eb</a></li>
+<li><a href="GPAW-19.8.1-intel-2019b-Python-3.7.4-MKLFFTW/">GPAW-19.8.1-intel-2019b-Python-3.7.4-MKLFFTW.eb</a></li>
+<li><a href="GPAW-19.8.1-intel-2019b-Python-3.7.4/">GPAW-19.8.1-intel-2019b-Python-3.7.4.eb</a></li>
+<li><a href="GPAW-19.8.1-intel-2020a-IntelPython3-MKLFFTW/">GPAW-19.8.1-intel-2020a-IntelPython3-MKLFFTW.eb</a></li>
+<li><a href="GPAW-19.8.1-intel-2020a-IntelPython3/">GPAW-19.8.1-intel-2020a-IntelPython3.eb</a></li>
+<li><a href="GPAW-19.8.1-intel-2020a-Python-3.8.3-MKLFFTW/">GPAW-19.8.1-intel-2020a-Python-3.8.3-MKLFFTW.eb</a></li>
+<li><a href="GPAW-19.8.1-intel-2020a-Python-3.8.3/">GPAW-19.8.1-intel-2020a-Python-3.8.3.eb</a></li>
+<li><a href="GPAW-20.1.0-intel-2019b-IntelPython3-MKLFFTW/">GPAW-20.1.0-intel-2019b-IntelPython3-MKLFFTW.eb</a></li>
+<li><a href="GPAW-20.1.0-intel-2019b-IntelPython3/">GPAW-20.1.0-intel-2019b-IntelPython3.eb</a></li>
+<li><a href="GPAW-20.1.0-intel-2019b-Python-3.7.4-MKLFFTW/">GPAW-20.1.0-intel-2019b-Python-3.7.4-MKLFFTW.eb</a></li>
+<li><a href="GPAW-20.1.0-intel-2019b-Python-3.7.4/">GPAW-20.1.0-intel-2019b-Python-3.7.4.eb</a></li>
+<li><a href="GPAW-20.1.0-intel-2020a-IntelPython3-MKLFFTW/">GPAW-20.1.0-intel-2020a-IntelPython3-MKLFFTW.eb</a></li>
+<li><a href="GPAW-20.1.0-intel-2020a-IntelPython3/">GPAW-20.1.0-intel-2020a-IntelPython3.eb</a></li>
+<li><a href="GPAW-20.1.0-intel-2020a-Python-3.8.3-MKLFFTW/">GPAW-20.1.0-intel-2020a-Python-3.8.3-MKLFFTW.eb</a></li>
+<li><a href="GPAW-20.1.0-intel-2020a-Python-3.8.3/">GPAW-20.1.0-intel-2020a-Python-3.8.3.eb</a></li>
+</ul>
+<h2 id="technical-documentation">Technical documentation</h2>
+<p>GPAW is a Quantum MD code.</p>
+<ul>
+<li><a href="https://wiki.fysik.dtu.dk/gpaw/">GPAW web site</a>, which also contains the installation
+  instructions.</li>
+</ul>
+<h3 id="dependencies">Dependencies</h3>
+<ul>
+<li>GPAW is Python code (3.5 or newer) but it also contains some C code for some performance-critical
+  parts and to interface to a number of libraries on which it depends (for GPAW 19.8.1):<ul>
+<li>BLAS</li>
+<li>LAPACK</li>
+<li>MPI</li>
+<li>BLACS and ScaLAPACK</li>
+<li>FFTW is highly recommended</li>
+<li><a href="https://www.tddft.org/programs/libxc/">LibXC</a> 3.X or 4.X. LibXC is a library
+  of exchange-correlation functions for density-functional theory</li>
+<li>Optional dependency: <a href="https://gitlab.com/libvdwxc/libvdwxc">libvdwxc</a>, a portable C library 
+  of density functionals with van der Waals interactions for density functional theory.
+  As of December 2019, this library is still unreleased.<ul>
+<li><em>It is not clear from the installation documentation whether we need the 
+  MPI-aware version of libvdwxc or not, but further on in the documentation 
+  it claims that libvdwxc will automatically parallelise which implies the 
+  MPI-aware version is needed.</em></li>
+</ul>
+</li>
+<li>Optional dependency: <a href="https://elpa.mpcdf.mpg.de/">ELPA</a>, 
+  which should improve performance for large systems when GPAW is used in
+  <a href="https://wiki.fysik.dtu.dk/gpaw/documentation/lcao/lcao.html">LCAO mode</a> </li>
+</ul>
+</li>
+<li>GPAW depends on a number of standard Python packages. As of GPAW 19.8.1, these are:<ul>
+<li><a href="https://pypi.org/project/numpy/">NumPY</a> 1.9 or later</li>
+<li><a href="https://pypi.org/project/scipy/">SciPy</a> 0.14 or later</li>
+</ul>
+</li>
+<li>GPAW relies on <a href="https://wiki.fysik.dtu.dk/ase/">ASE</a>, a Python package from the same group<ul>
+<li>Check the release notes of GPAW as the releases of ASE and GPAW should match.
+  E.g., when starting this documentation, version 19.8.1 was the most up-to-date release of 
+  GPAW with 3.18.0 the matching ASE version. See further below for more instructions
+  on how to determine the right versions for dependencies.</li>
+<li>ASE has some optional dependencies that are not needed for the benchmarking: Matplotlib (2.0.0 or newer), tkinter and Flask.</li>
+</ul>
+</li>
+</ul>
+<p>BLAS, LAPACK, MPI, BLACS and ScaLAPACK are standard components of the Intel toolchain 
+that we use for installing GPAW. See this repository for the FFTW and LibXC EasyConfig 
+files as used at UAntwerp. </p>
+<p>NumPy and SciPy are standard components of the Python bundles in use at UAntwerp, see 
+the EasyConfig files in this repository. ASE introduces additional dependencies on 
+other Python packages: Matplotlib, tkinter and Flask. These are optional and only needed
+for some of the functionality.
+ * <a href="https://pypi.org/project/matplotlib/">Matplotlib</a> is a standard component in the Python 
+   modules at UAntwerp, see the Python
+   and IntelPython3-Packages EasyConfigs in this repository.
+ * tkinter, the TK interface, is a standard component of recent Python distributions.
+ * <a href="https://pypi.org/project/Flask/">Flask</a> needs to be installed. 
+   It brings with it a set of other dependencies: 
+    * <a href="https://pypi.org/project/Werkzeug/">Werkzeug</a>
+    * <a href="https://pypi.org/project/Jinja2/">Jinja2</a>, and this one needs
+        * <a href="https://pypi.org/project/MarkupSafe/">MarkupSafe</a>
+    * <a href="https://pypi.org/project/itsdangerous/">itsdangerous</a>
+    * <a href="https://pypi.org/project/click/">click</a>: Included in recent standard Python packages at UAntwerp, 
+      but not in some of the older ones.</p>
+<p>GPAW, when installed automatically, rarely has the best configuration for HPC, 
+so check the section on the internal organization of the compilation process on
+how to customize to get a proper HPC build.</p>
+<h4 id="determining-version-numbers-of-dependencies">Determining version numbers of dependencies</h4>
+<ul>
+<li>Python versions: <a href="https://pypi.org/project/gpaw/">On PyPi</a> or towards the bottom 
+  of the file <code>setup.py</code></li>
+<li>ASE version: <ul>
+<li><a href="https://wiki.fysik.dtu.dk/gpaw/releasenotes.html">In the release notes</a>:
+   preferred version, though other versions may also work.</li>
+<li>Line <code>install_requires</code> towards the bottom of the file <code>setup.py</code> may give 
+   a different restriction from the release notes.</li>
+<li>In the file <code>doc/install.rst</code></li>
+</ul>
+</li>
+<li>NumPy and SciPy:<ul>
+<li>In the file <code>doc/install.rst</code></li>
+</ul>
+</li>
+</ul>
+<table cellpadding="3">
+<tr><th>GPAW</th>   <th>Python</th>       <th>ASE</th>                 <th>NumPy</th>    <th>SciPy</th>     <th>LibXC</td></tr>
+<tr><td>19.8.1</td> <td>3.4-3.7</td>      <td>3.18.0, &geq;3.18.0</td> <td>&geq;1.9</td> <td>&geq;0.14</td> <td>3.x or 4.x</td></tr>
+<tr><td>20.1.0</td> <td>3.5-3.8</td>      <td>3.19.0, &geq;3.18.0</td> <td>&geq;1.9</td> <td>&geq;0.14</td> <td>3.x or 4.x</td></tr>
+</table>
+
+<h3 id="internal-organization-of-the-compilation-process-of-gpaw">Internal organization of the compilation process of GPAW</h3>
+<p>GPAW is compiled through Python scripts to integrate in the standard Python package
+setup process. 
+* Up to and including version 19.8.1: The scripts are fairly outdated though as they still rely on 
+  <a href="https://docs.python.org/3/distutils/index.html"><code>distutils</code></a> rather than <code>setuptools</code>.
+* From version 20.1.0 on, <code>setuptools</code> is used instead of <code>distutils</code> easing
+  installation with <code>pip</code>.</p>
+<p>As a result of this, there are some differences between the way
+versions up to 19.8.1 and versions from 20.1.0 are configured. There are
+also differences in the files generated that are not related to this
+switch.</p>
+<p>However, togehter with this transition, there was also an important change to 
+how parallel computations are organized, leading to even more differences.</p>
+<p>In both cases the build process can be customized (and often has to be customized)
+through a customization script.</p>
+<h4 id="version-1981-and-likely-below">Version 19.8.1 and likely below</h4>
+<p>GPAW consists of a lot of Python code, a purely sequential shared library 
+<code>_gpaw.cpython-&lt;python version&gt;-&lt;architecture&gt;.so</code> for some operations and
+for a parallel installation also the specialised parallel Python
+interpreter <code>gpaw-python</code>. There are two types of installation:
+1. If <code>mpicc</code> is not found and no MPI compiler is specified in the customization
+   script, of if the automatic detection of <code>mpicc</code> is undone in the customization 
+   script by setting <code>mpicompiler</code> to <code>None</code>, a purely sequential version of GPAW
+   is installed, including only the Python code and the shared library.
+1. If <code>mpicc</code> is found or another MPI compiler is specified in the customization 
+   script, a distributed memory version of GPAW is build, consisting of the
+   Python code, the sequential shared library and the parallel Python interpreter
+   <code>gpaw-python</code>. Only the latter links to the MPI libraries and to BLACS/ScaLAPACK
+   (if used).</p>
+<p>Note that the manual of GPAW advises to use <code>OMP_NUM_THREADS=1</code> which may influence 
+other packages called from GPAW, but the default is to compile with single threaded 
+libraries.</p>
+<p>The other commands in the bin directory (beside <code>gpaw-python</code>) are all regular
+Python scripts, except for <code>gpaw-runscript</code> which is executed by <code>gpaw-python</code>. 
+Note that this script is only an example and has not been adapted to our particular 
+cluster!</p>
+<p>It is possible and needed to change the default configuration though by adapting
+<code>customize.py</code> or writing your own variant of this script and then overwriting the
+default by adding <code>--customize=&lt;name of file&gt;</code> to the argument list of
+<code>python setup.py build</code> and <code>python setup.py install</code>.</p>
+<p>At the point where <code>customize.py</code> is called, the NumPy include files
+have been located, libxc is added to the library list, and the configure process
+has done an effort to auto-locate the linear algebra libraries (at least
+BLAS and Lapack, see below). However, we experienced that the choice was often wrong and
+the resulting code refused to run. The MPI compiler and linker will be set to 'mpicc'
+if that one is found, or 'None' otherwise. </p>
+<p>The script <code>config.py</code> tries very hard to auto-determine a suitable BLAS/LAPACK
+library for various platforms that it recognizes (even ARM). However, it does so 
+not by looking in <code>LIBRARY_PATH</code> or <code>LD_LIBRARY_PATH</code> but only checks default 
+locations for installation of those libraries as part of the OS, except for MKL,
+where it does use the <code>MKLROOT</code> environment variable. Hence it fails to
+detect any library in modules that are installed elsewhere in the file system
+(except then for MKL if the module make correct use of <code>MKLROOT</code>).
+It is important that this is corrected in a customization file.
+Note that on 64-bit Intel architecture if multiple supported BLAS libraries are found, 
+the preferred order is:
+1. ACML, in /opt/acml...
+1. Intel MKL
+1. <a href="https://www.openblas.net/">OpenBLAS</a>, in 'usr/lib', '/usr/local/lib', '/usr/lib64'
+1. <a href="http://math-atlas.sourceforge.net/">ATLAS</a>, in 'usr/lib', '/usr/local/lib', '/usr/lib64/atlas'
+1. libsatlas: Serial version of Atlas (recent versions of Atlas compile a serial 
+   and a threaded version, the latter called libtatlas.) Search is in the same 
+   directories as for libatlas.</p>
+<p>The <code>distutils</code> <code>build_ext</code> method is redefined in <code>setup.py</code>. It first
+calls the regular <code>distutils</code> <code>build_ext</code> method to build the shared library
+and prepare some Python scripts for the bin directory, and then calls the
+<code>build_interpreter</code> routing defined in <code>config.py</code> to build <code>gpaw-python</code>.
+Only a limited set of C files contain calls to the MPI libraries. The
+shared library contains no MPI calls. All C files that contain MPI calls include 
+header files that define stub data types/routines/macros so that the sources 
+can be compiled to a serial shared library without the use of a MPI compiler wrapper.
+When building 'gpaw-python' at a later stage, those files that do contain
+calls to MPI are recompiled using the MPI compiler wrapper, and all objects are 
+then linked into the <code>gpaw-python</code> binary.</p>
+<p>For the shared library, compiler flags are used in the <code>distutils</code> way, taking
+them from the Python configuration and environment. This may lead to
+very misleading results. You may find customization scripts that specify a
+different compiler through the <code>compiler</code> variable, but that value is ignored
+if <code>CC</code> and <code>`LDSHARED</code> are defined in the environment. We consider this a bug,
+see below, as the code does not do what the comments in <code>setup.py</code> suggests.</p>
+<p>For linking <code>gpaw-python</code>, one may need to check the argument that is used to detect 
+the correct option for adding runtime library search paths to the command line
+(if this is used in the customization script). The current code assumes the MPI
+compiler wrapper is called <code>mpicc</code> and checks if this calls <code>gcc</code> but doesn't recognize
+other compilers, so the option used may not be the right one.</p>
+<h5 id="bugs-in-1981">Bugs in 19.8.1</h5>
+<ul>
+<li>If <code>CC</code> and <code>LDSHARED</code>, the value of <code>compiler</code> customize.py script is
+  ignored during the compilation process and <code>CC</code> respectively <code>LDSHARED</code> are used
+  for the compilation and link steps. The hack to remove this in <code>setup.py</code> does not
+  work. The code is simply incomplete as it does not push the variables back to
+  the environment or fails to feed them in another way to the compilation process.</li>
+<li><code>setup.py</code> suggests there is a flag <code>--remove-default-flags</code> which one can use to
+  remove compiler flags imported from various environment variables (and/or Python
+  configuration?), but the flag does not work at all. The hack that should actually
+  remove those (located in the same block of code as the hack for the previous bug)
+  does not work for the same reason that the hack to overrule setting <code>CC</code> or
+  <code>LDSHARED</code> does not work.</li>
+<li>The code in <code>build_interpreter</code> in <code>config.py</code> to build the argument list
+  for runtime library paths is suspicious. There is no way to set the right 
+  options by hand. There are cases where it may use the wrong option, e.g., <code>-R</code> 
+  rather than <code>-Wl,-R</code>.</li>
+</ul>
+<h4 id="version-2010-and-likely-above">Version 20.1.0 and likely above</h4>
+<p>As in earlier versions, GPAW consists of a lot of Python code, a shared library
+<code>_gpaw.cpython-&lt;python version&gt;-&lt;architecture&gt;.so</code> for some operations and optionally
+the binary <code>gpaw-python</code>, a specialized parallel Python operator. There is however 
+a major difference for the preferred parallel build of GPAW. There are now three
+build types, the third one being undocumented in the documentation of version
+20.1.0 and hence likely deprecated.
+1. Sequential build: If <code>mpicc</code> is not found and no MPI compiler is specified in
+   the customization script, of if the automatic detection of <code>mpicc</code> is undone in
+   the customization script by setting <code>mpicompiler</code> to <code>None</code>, a purely sequential
+   version of GPAW is installed, including only the Python code and the
+   sequential shared library.
+1. Prefered parallel build: If <code>mpicc</code> is found or another MPI compiler is specified 
+   in the customization script, a distributed memory version of GPAW is build, 
+   consisting of the Python code and a parallel shared library. Contrary to version
+   19.8.1, MPI and the optional    BLACS/ScaLAPACK are now linked directly into the 
+   shared library.
+1. Old-style parallel build: To enable this build type, set <code>mpicompiler</code> (or make 
+   sure <code>mpicc</code> is found) and set <code>parallel_python_interpreter</code> to <code>True</code> in the
+   customization file. This build type consists of the the Python sources, the
+   sequential shared library, and the parallel Python interpreter <code>gpaw-python</code> 
+   linking to the MPI libaries and optional BLAC/ScaLAPACK. <strong>We did not test
+   this build type, the information is derived from analyzing the setup script.</strong></p>
+<p>In the first two build types, all GPAW commands in the <code>bin</code> directory are Python scripts.</p>
+<p>Note that the manual of GPAW advises to use <code>OMP_NUM_THREADS=1</code> which may influence 
+other packages called from GPAW, but the default is to compile with single threaded
+libraries.</p>
+<p>It is possible and usually needed to change the default configuration by adapting
+<code>siteconfig.py</code> or writing your own variant of this script and passing its name (and 
+path if not in the root GPAW directory) to either <code>pip</code> or <code>python setup.py build</code> 
+and <code>python setup.py install</code> through the environment variable <code>GPAW_CONFIG</code>
+(like <code>GPAW_CONFIG=MySiteconfig.py pip gpaw</code>). The contents of <code>siteconfig.py</code> is
+largely the same as for <code>customize.py</code> in prior versions, though the value of
+certain variables at the start is different. The libxc library is added to the list,
+but there is no automatic detection of the linear algebra libraries (which often did
+not work as expected anyway). The NumPy include files are auto-located but only
+just before compiling the shared library, and are not even shown in the configuration
+log file. The MPI compiler and linker will be set to 'mpicc'
+if that one is found, or 'None' otherwise. </p>
+<h5 id="bugs-in-2010">Bugs in 20.1.0</h5>
+<ul>
+<li>If <code>CC</code> and <code>LDSHARED</code>, the value of <code>compiler</code> or <code>mpicompiler</code> in the siteconfig.py
+  (the former for a sequential shared library, the latter for a parallel one) is
+  ignored during the compilation process and <code>CC</code> respectively <code>LDSHARED</code> are used
+  for the compilation and link steps. <strong>Make sure <code>CC</code> and <code>LDSHARWED</code> are set to
+  the MPI compiler/linker when doing a build with a parallel shared library, or make
+  sure they are not set.</strong></li>
+<li><code>setup.py</code> suggests there is a flag <code>--remove-default-flags</code> which one can use to
+  remove compiler flags imported from various environment variables (and/or Python
+  configuration?), but the flag does not work at all.</li>
+<li>The code in <code>build_interpreter</code> in <code>config.py</code> to build the argument list
+  for runtime library paths is suspicious. There is no way to set the right 
+  options by hand. There are cases where it may use the wrong option, e.g., <code>-R</code> 
+  rather than <code>-Wl,-R</code>. Note that this code is only used when building <code>gpaw-python</code>,
+  it is not clear if setuptools does the right thing though when processing
+  <code>runtime_library_dirs</code>.</li>
+</ul>
+<h4 id="variables-for-customizepy-or-siteconfigpy">Variables for customize.py or siteconfig.py</h4>
+<ul>
+<li>compiler: Default is <code>None</code> which implies that the compiler as would normally result 
+  from the standard Python extension configuration process. It is used for compiling 
+  and linking the sequential shared library. <em>See the bugs for specific 
+  GPAW versions as this variable is often ignored in practice.</em> </li>
+<li>mpicompiler: Default is <code>mpicc</code> if found and <code>None</code> otherwise. Used for parallel 
+  builds and in 20.1.0 and higher for linking the parallel shared library.
+  <em>See the bugs for specific GPAW versions.</em></li>
+<li>mpilinker: Default is <code>mpicc</code> if found and <code>None</code> otherwise. Used for linking
+  <code>gpaw-python</code>. <em>See the bugs for specific GPAW versions.</em></li>
+<li>libraries: List of libraries to be used when linking non-MPI code. Format of the
+  list entries is 'XX' for libXX.a or libXX.so.</li>
+<li>mpi_libraries: Additional libraries for linking <code>gpaw-python</code>.</li>
+<li>library_dirs: Directories to search for the libraries in <code>libraries</code>.</li>
+<li>mpi_library_dirs: Directories to search for the libraries in <code>mpi_libraries</code>.</li>
+<li>include_dirs: Include directories needed to compile non-MPI source files.</li>
+<li>mpi_include_dirs: Additional include directories needed to compile sources 
+  for <code>gpaw-python</code>.</li>
+<li>runtime_library_dirs: list of directories to search for shared (dynamically loaded) 
+  libraries at run-time. <em>It is not clear if they are always added to the command
+  line in the right way.</em> </li>
+<li>mpi_runtinme_library_dirs: Additionsl list of directories to search for shared
+  libraries at run-time for <code>gpaw-python</code>. <em>It is not clear if they are always 
+  added to the command line in the right way.</em></li>
+<li>extra_compile_args: Extra arguments used when compiling (on top of arguments
+  by the regular Python procedure if <code>--remove-default-flags</code> is not used)</li>
+<li>extra_link_args: Extra arguments used when linking.</li>
+<li>define_macros: C preprocessor macros to define when compiling non-MPI code</li>
+<li>mpi_define_macros: Additionsl C preprocessor macros to define when compiling
+  MPI code.</li>
+<li>undef_macros: C preprocessor macros to undefine.</li>
+<li>fftw (boolean, default <code>False</code>): Use FFTW instead of NumPy FFTW</li>
+<li>scalapack (boolean, default <code>False</code>): Use ScaLAPACK</li>
+<li>libvdwxc (boolean, default <code>False</code>): Use libvdwxc</li>
+<li>elpa (boolean, default <code>False</code>): Use ELPA</li>
+<li>noblas (20.1.0 and up only, default <code>False</code>): Compile GPAW without BLAS libraries.</li>
+<li>parallel_python_interpreter (20.1.0 and up only, default <code>False</code>): Build the
+  parallel interpreter gpaw-python.</li>
+</ul>
+<p>Note that in version 19.8.1 (and likely earlier versions) all of the above variables
+starting with <code>mpi</code> are only used if <code>mpicompiler</code> points to a MPI compiler. They are
+only used to build the parallel interpreter <code>gpaw-python</code>.</p>
+<p>In version 20.1.0 (and likely later versions) all of the above variables starting with
+<code>mpi</code> are only used if <code>parallel_python_interpreter</code> is <code>True</code>, to build the
+parallel interpreter <code>gpaw-python</code>. This is simply confusing: What
+has to be specified in the non-mpi variables and what has to be specified in the
+<code>mpi_</code>-variables differs depending on whether the new-style build with a parallel
+shared library is done, or the old-style with a sequential share library
+and MPI-support provided by <code>gpaw-python</code>. </p>
+<h3 id="easyconfig">EasyConfig</h3>
+<h4 id="general-remarks">General remarks</h4>
+<p>We based our EasyBuild compile procedure on an EasyConfig for the 19.8.1 version
+of GPAW included with EasyBuild 4.0.1 and the one for 20.1.0 included in
+EasyBuild 4.2.0. Both use a customization file to adapt
+various options for GPAW. This is a very standard procedure for GPAW and is almost 
+always needed. A model customization file is in the GPAW sources as
+<code>customize.py</code> (version 19.8.1) or <code>siteconfig_example.py</code> (version 20.1.0). </p>
+<p>Problems encountered:
+* The patch in the GPAW EasyConfig of EasyBuild 4.0.1 poses several problems
+    * It creates a new file and for some reason this does not work in an extension
+      list. Even when specifying the level at which the patch should be applied,
+      EasyBuild cannot find where to apply the patch.
+    * The customization file is very incomplete and contained several errors
+        * When building the shared library, compiler options are set the 
+          distuitls/setuptools way. Options are picked up from the environment
+          (<code>CFLAGS</code> but also some other variables that we do not use). Options
+          specified in <code>extra_compile_args</code> in the customization script are then
+          added to those. However, the executable <code>gpaw-python</code> is compiled in
+          a different way (specifying the full build instructions in the setup
+          script and config.py rather than organising it through distutils/setuptools)
+          and there the compiler flags specified in the environment are not used.
+          Hence when compiling <code>gpaw-python</code> one has to use <code>extra_compile_args</code>
+          as otherwise no optimization options will be used when recompiling
+          files with the MPI compiler for linking into <code>gpaw-python</code>. 
+          This implies no host-specific optimizations with the Intel compiler 
+          but implies <code>-O0</code> should the GNU compilers be used. But setting
+          this variable will also imply that compiler options may be repeated or
+          conflict when compiling the shared library. If <code>extra_compile_args</code>
+          is simply set to whatever is in <code>CFLAGS</code>, options are simply repeated
+          which does no harm while one can still use the EasyBuild mechanisms
+          to influence compiler options.
+        * No support for ELPA, but this is trivial to add.
+        * Not specifically an error, but the Lapack/BLAS libraries were included
+          multiple times.
+        * Setting include_dirs to <code>[]</code> is just plain stupid as it already contains
+          information about the NumPy installation. In some cases (IntelPython for 
+          instance) the compilation process now fails to find the NumPy header
+          files.
+* Implementing the customization script as a patch has its restrictions. It is a 
+  cumbersome process when one wants to experiment with options, as one has to 
+  edit the true sources, then make a patch for it in a location that EasyBuild can
+  find, and then apply it, which is sometimes tricky for a patch that adds a new
+  file as we must be sure that it is added where we need it (which is tricky in
+  particular with extensions). We've looked at two other mechanisms, and 
+  ultimately went for the last after experimenting with the first and running
+  into its limitation (too many files in the EasyConfig directories, 
+  easy to edit the wrong file) 
+    * Implement the customization file as an additional source file
+      that is stored with the EasyConfig as this directory is
+      also searched for sources by default. There are a number of pitfalls though
+        * It is impossible to specify multiple source files in an extension list. 
+          Hence this procedure works well when GPAW is installed as a PythonPackage
+          type EasyConfig, but a trick was needed when installing in an extension list
+          of a 'Bundle' EasyConfig: We specify a dummy component that simply puts
+          the file in the overall source directory of the Bundle and then refer to 
+          that one. This is easily done with a "Tarball" bundle component and a custom
+          unpack procedure that creates the directory where we want the file to go. 
+        * That source file is not automatically copied to the directory where EasyBuild
+          stores the sources for further use. This is in fact a good thing, and we didn't
+          copy manually, as the version in that directory would take precedence to the 
+          one stored with the EasyConfig. Hence new edits wouldn't be taken into account.
+          When not using the Tarball bundle component that puts the file automatically
+          in the easybuild subdirectory of the installation directory, it is a good 
+          idea to copy the customization script to the %(installdir)s/easybuild directory 
+          so that we still have the exact file as it was used to install the program
+          for reproducibility of the installation.
+    * Put the configuation script as a string variable in the EasyConfig for GPAW,
+      and then use <code>prebuildopts</code> to inject it into the GPAW sources using the
+      Bash "Here Document" trick. The advantage of this approach is that all
+      configuration information is in a single file which avoids errors when changing 
+      the configuration.
+* The build process could not find the FFTW include files of the Intel FFTW 
+  wrappers. It turns out that the include file is not included as <code>fftw/fftw3.h</code>or 
+  so, but without the subdirectory. This was solved by adapting our Intel compiler
+  modules and simply including this directory as the problem may occur with other
+  software also. The alternative is to simply compute the directory name from
+  <code>MKLROOT</code> in the customization file and add that one to the list of directories
+  to include in the search path.
+* The optional libvdwxc needs the FFTW3 MPI-interfaces that are not provided by the
+  Intel wrappers. To make sure any conflict between routine names is impossible, we
+  compile GPAW with the regular FFTW libraries rather than the Intel MKL wrappers
+  when libvdwxc is included.
+* We also include the Atomic PAW setup files in the installation. They are put in
+  the share/gpaw-setups subdirectory and pointed to by GPAW_SETUP_PATH as required 
+  by GPAW. Since this is a comma-separated path rather than the usual colon-separated
+  path we simply set the variable rather than using <code>prepend_path</code> in the module file
+  (so put it in <code>mnodextravars</code> rather than <code>modextrapaths</code>).
+* In version 19.8.1, the installation manual advises to set <code>OMP_NUM_THREADS</code> to 1.
+  To avoid user errors, we do this in the module file.</p>
+<h4 id="2019b-toolchain-gpaw-1981">2019b toolchain - GPAW 19.8.1</h4>
+<p>GPAW was compiled with both a EasyBuild Python 3.7.4 module and the Intel Python 3 
+distribution, and in both cases both without libvdwxc using the Intel FFTW wrappers 
+for MKL, and with libvdwxc but then using FFTW3 itself (as libvdwxc requires that 
+library anyway). The versions without libvdwxc have the <code>-MKLFFTW</code> suffix.</p>
+<h5 id="port-of-gpaw-1981-to-the-2020a-toolchains">Port of GPAW 19.8.1 to the 2020a toolchains</h5>
+<p>It turns out that there are dangerous <code>omp simd</code> pragmas in <code>c/bmgs/fd.c</code> and likely
+also in <code>c/bmgs/relax.c</code> and <code>c/symmetry.c'. The one in</code>fd.c<code>caused segmentation violations, likely
+due to an unaligned memory access. A compiler is allowed to assume that vectorization
+is 100% safe when</code>omp simd<code>is used and hence to assume that alignment is OK. It looks
+like the 2020 Intel compilers do make that assumption while the 2019 compilers did 
+not, or that they are the first Intel compilers that turn on OpenMP SIMD support
+without using the</code>-qopenmp<code>flag (they do it for optimization level</code>-O2` and higher). </p>
+<p>There are several possible solutions
+* There is a patch from the authors for 20.1.0 that puts the <code>omp simd</code> in a conditional block.
+  It may be that the only function of that patch is to avoid warnings about 
+  unrecognized pragma's with some compilers if OpenMP is not enabled. The 
+  pragmas are only included if <code>_OPENMP</code> is defined. We did not check if that
+  solves the problem with the Intel 2020 compilers or if those compilers do
+  define that preprocessor symbol already when they auto-enable OpenMP SIMD
+  support.
+* Develop a similar patch that simply omits those lines in <code>c/bmgs/fd.c</code>,
+  <code>c/bmgs/relax.c</code> and possibly also in <code>c/symmetry.c</code> (we are not certain
+  that that one never causes problems). The advantage of such a patch is that
+  it is very clear what it does.
+* Simply add <code>-qno-openmp-simd</code> to the <code>CFLAGS</code> to disable the automatically
+  turned on OpenMP SIMD support also solves the problem. We have checked and there
+  is no performance penalty compared to working with the patch in the second
+  option, so it has no influence on the automatic vectorization capabilities
+  of the compiler.</p>
+<p>Since no patch is needed, we used the last option.</p>
+<h4 id="2020a-toolchains-gpaw-2010">2020a toolchains - GPAW 20.1.0</h4>
+<ul>
+<li>We checked our way of working with the EasyConfig files in the EasyBuilders
+  repository as these are developed by people from the institute that also 
+  develops GPAW. The customization script is very different from the one
+  used for GPAW 19.8.1, not because the structure has changed, but because it
+  is now developed by different people. There are a number of things that
+  are no longer necessary though, e.g., cleaning libraries and mpi_libraries
+  as there is no linear algebra junk in there. Also some variables for 
+  ScaLAPACK do not need to be set anymore and are automatically correctly
+  detected.</li>
+<li>Also take note of the change in the way the customization script is 
+  named and/or specified otherwise due to the switch from distutils to
+  setuptools.</li>
+<li>The change in architecture has a significant influence on how to 
+  build GPAW. In particular, one now has to either set<code>use_mpi</code> in
+  <code>optarch</code> to true to ensure that <code>CC</code> points to the MPI compiler,
+  or unset <code>CC</code> when calling <code>setup.py</code> as it overwrites whatever
+  the <code>setup.py</code> script tries to arrange based on the values of
+  <code>compiler</code> and <code>mpicompiler</code> in the customization file. We use the
+  latter approach and simply unset <code>CC</code> and <code>LDSHARED</code> to ensure that
+  the value specified for <code>mpicompiler</code> is used.</li>
+<li>Note that besides the changes already mentioned earlier, GPAW is
+  now also packaged as an egg, so `lib/python3.8/site-packages/gpaw' does no
+  longer exist. We took the sanity check tests from the EasyBuilders recipes for
+  GPAW 20.1.0.</li>
+<li>Note that we did try building with pip as in the EasyBuilders recipe but this did
+  not work as GPAW tried to link to blas by adding <code>-lblas</code> to the link command
+  line which is the wrong BLAS library.</li>
+<li>The problem with the <code>omp simd</code> pragmas causing segmentation violations is still
+  present. See the remarks for the the port of 19.8.1 to the Intel 2020 compilers
+  for the solution that we implemented.</li>
+<li>As we already cat the <code>configuration.log</code> file to the regular EasyBuild log,
+  we do no longer store a copy of the file in %(installdir)s/easybuild, so
+  <code>postinstallcmds</code> is no longer needed.</li>
+</ul>
+<h5 id="backport-of-gpaw-2010-to-the-2019b-toolchains">Backport of GPAW 20.1.0 to the 2019b toolchains</h5>
+<ul>
+<li>Due to problems with the 2020a compiler that got solved later in the process,
+  we also generated a version of GPAW 20.1.0 for the 2019b toolchains as we know 
+  that 19.8.1 worked properly with those compilers.</li>
+<li>This is a trivial backport. Even though it seems that <code>-qno-openmp-simd</code> is
+  not needed, we stuck to it as it does no harm either.</li>
+</ul>
+<h3 id="checking-the-build-result">Checking the build result</h3>
+<ul>
+<li>Search in the EasyBuild log file for <code>python setup</code> to see if the compilation
+  did not produce errors. Some packages have Python fallback code if the compilation
+  fails, so the standard EasyBuild sanity check will not detect these problems,
+  but the result will be a much slower Python package.</li>
+<li>The smallest of the PRACE UEABS benchmarks runs fine on a single node (finished
+  in about 4 minutes on a 28-core broadwell node). Hence this is also an easy test.
+  We did not that the benchmark does not work anymore with GPAW 20.1.0, which diverges.
+  This may be due to a change in algorithms and not to a problem with the compilation
+  of GPAW.</li>
+</ul>
+<p><a href="../..">[package list]</a></p>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    <a href="https://github.com/hpcuantwerpen" target="_blank" rel="noopener" title="HPC-UAntwerpen on GitHub" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "header.autohide", "toc.follow", "content.code.annotate", "search.suggest"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.bd0b6b67.min.js"}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.467223ff.min.js"></script>
+      
+    
+  </body>
+</html>
