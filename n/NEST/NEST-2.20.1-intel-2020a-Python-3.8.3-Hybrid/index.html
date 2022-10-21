@@ -942,84 +942,103 @@
 
 <p><a href="../">[NEST]</a> <a href="../../..">[package list]</a></p>
 <h1 id="nest-2201-intel-2020a-python-383-hybrideb">NEST-2.20.1-intel-2020a-Python-3.8.3-Hybrid.eb</h1>
-<p>``` python</p>
-<p>easyblock = 'CMakeMake'</p>
-<p>local_buildset =         '2020a'
-local_gcc_version =      '9.3.0'</p>
-<p>local_NEST_version =           '2.20.0'          # https://github.com/nest/nest-simulator/releases
-local_Python3_version =        '3.8.3'           # https://www.python.org/downloads/</p>
-<p>name =          'NEST'
-version =       local_NEST_version
-versionsuffix = '-Python-%(pyver)s-Hybrid'</p>
-<p>homepage = 'https://www.nest-simulator.org/'</p>
-<p>whatis = [
-    "Name:        NEST, also known as nest-simulator",
-    "Version:     %s" % (version),
-    "Category:    binary, library and Python package",
-    "Description: NEST is a simulator for spiking neural network models",
-    "Notes:       This module is compiled with support for MPI and OpenMP. GSL is included.",
-    "URL:         https://www.nest-simulator.org/",
-]</p>
-<p>description = """
-NEST is a simulator for spiking neural network models, ideal for networks of 
-any size, for example:
-1. Models of information processing e.g. in the visual or auditory cortex of 
-   mammals,
-2. Models of network activity dynamics, e.g. laminar cortical networks or 
-   balanced random networks,
-3. Models of learning and plasticity.</p>
-<p>The module is compiled with support for OpenMP and MPI (a so-called hybrid 
-MPI/OpenMP program) and support for the GNU Scientific Library (GSL).
-"""</p>
-<p>usage = """
-Check the NEST documentation, chapter "Guide to parallel computing", to
-know how to set the right number of threads per task and to start 
-NEST with MPI. The default for threading is a single thread per
-MPI rank.</p>
-<p>The nest_vars.sh script in $EBROOTNEST/bin should not be run if you
-load the module as the variables are already set by the module.
-"""</p>
-<p>docurls = [
-    'Web-based documentation on https://nest-simulator.readthedocs.io/en/stable/',
-]</p>
-<p>toolchain =     {'name': 'intel', 'version': local_buildset}
-toolchainopts = {'pic': True, 'strict': True, 'openmp': False, 'usempi': False} # See README.md</p>
-<h1 id="httpsgithubcomnestnest-simulatorarchivev2200zip">https://github.com/nest/nest-simulator/archive/v2.20.0.zip</h1>
-<p>sources = [ { 
-    'download_filename': 'v%(version)s.zip',
-    'filename':          'nest-simulator-%(version)s.zip',
-    'source_urls':       ['https://github.com/nest/nest-simulator/archive']
-} ]
-checksums =   ['e458f9f30883369964b60931cb767f145fb5c5504652e6cdaabedf14b188aa03']</p>
-<p>dependencies = [
-    ('baselibs', local_buildset,        '', ('GCCcore', local_gcc_version)), # libreadline, ncurses, GSL, zlib, buildtools
-    ('Python',   local_Python3_version),
-]</p>
-<p>builddependencies = [
-    ('buildtools', local_buildset, '', True),  # CMake, pkg-config, doxygen?
-]</p>
-<p>configopts  = '-DCMAKE_INSTALL_LIBDIR=lib -Dwith-mpi=ON -Dwith-openmp=ON '
-configopts += '-Dwith-optimize=OFF -Dwith-intel-compiler-flags=" " ' # As flags are passed by EasyBuild already and picked up.
-configopts += '-Dwith-python=3 '
-configopts += '-Dwith-readline=$EBROOTBASELIBS '
-configopts += '-Dwith-gsl=$EBROOTBASELIBS '
-configopts += '-Dwith-ltdl=$EBROOTBASELIBS '
-configopts += '-DCMAKE_C_FLAGS_RELEASE="-DNDEBUG" '</p>
-<p>modextravars = {
-    'NEST_INSTALL_DIR':   '%(installdir)s',
-    'NEST_DATA_DIR':      '%(installdir)s/share/nest',
-    'NEST_DOC_DIR':       '%(installdir)s/share/doc/nest',
-    'NEST_MODULE_PATH':   '%(installdir)s/lib/nest',
-    'NEST_PYTHON_PREFIX': '%(installdir)s/lib/python%(pyshortver)s/site-packages',
-}</p>
-<p>modextrapaths = {
-    'PYTHONPATH': ['lib/python%(pyshortver)s/site-packages'],
-}</p>
-<p>sanity_check_paths = {
-    'files': ['bin/nest', 'lib/libnest.%s' % SHLIB_EXT, 'lib/libmodels.%s' % SHLIB_EXT],
-    'dirs':  ['lib/python%(pyshortver)s/site-packages'],
-}</p>
-<p>moduleclass = 'bio'```</p>
+<div class="highlight"><pre><span></span><code><span class="n">easyblock</span> <span class="o">=</span> <span class="s1">&#39;CMakeMake&#39;</span>
+
+<span class="n">local_buildset</span> <span class="o">=</span>         <span class="s1">&#39;2020a&#39;</span>
+<span class="n">local_gcc_version</span> <span class="o">=</span>      <span class="s1">&#39;9.3.0&#39;</span>
+
+<span class="n">local_NEST_version</span> <span class="o">=</span>           <span class="s1">&#39;2.20.0&#39;</span>          <span class="c1"># https://github.com/nest/nest-simulator/releases</span>
+<span class="n">local_Python3_version</span> <span class="o">=</span>        <span class="s1">&#39;3.8.3&#39;</span>           <span class="c1"># https://www.python.org/downloads/</span>
+
+<span class="n">name</span> <span class="o">=</span>          <span class="s1">&#39;NEST&#39;</span>
+<span class="n">version</span> <span class="o">=</span>       <span class="n">local_NEST_version</span>
+<span class="n">versionsuffix</span> <span class="o">=</span> <span class="s1">&#39;-Python-</span><span class="si">%(pyver)s</span><span class="s1">-Hybrid&#39;</span>
+
+<span class="n">homepage</span> <span class="o">=</span> <span class="s1">&#39;https://www.nest-simulator.org/&#39;</span>
+
+<span class="n">whatis</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;Name:        NEST, also known as nest-simulator&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Version:     </span><span class="si">%s</span><span class="s2">&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">version</span><span class="p">),</span>
+    <span class="s2">&quot;Category:    binary, library and Python package&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Description: NEST is a simulator for spiking neural network models&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Notes:       This module is compiled with support for MPI and OpenMP. GSL is included.&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;URL:         https://www.nest-simulator.org/&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">NEST is a simulator for spiking neural network models, ideal for networks of </span>
+<span class="s2">any size, for example:</span>
+<span class="s2">1. Models of information processing e.g. in the visual or auditory cortex of </span>
+<span class="s2">   mammals,</span>
+<span class="s2">2. Models of network activity dynamics, e.g. laminar cortical networks or </span>
+<span class="s2">   balanced random networks,</span>
+<span class="s2">3. Models of learning and plasticity.</span>
+
+<span class="s2">The module is compiled with support for OpenMP and MPI (a so-called hybrid </span>
+<span class="s2">MPI/OpenMP program) and support for the GNU Scientific Library (GSL).</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="n">usage</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Check the NEST documentation, chapter &quot;Guide to parallel computing&quot;, to</span>
+<span class="s2">know how to set the right number of threads per task and to start </span>
+<span class="s2">NEST with MPI. The default for threading is a single thread per</span>
+<span class="s2">MPI rank.</span>
+
+<span class="s2">The nest_vars.sh script in $EBROOTNEST/bin should not be run if you</span>
+<span class="s2">load the module as the variables are already set by the module.</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="n">docurls</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;Web-based documentation on https://nest-simulator.readthedocs.io/en/stable/&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="n">toolchain</span> <span class="o">=</span>     <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;intel&#39;</span><span class="p">,</span> <span class="s1">&#39;version&#39;</span><span class="p">:</span> <span class="n">local_buildset</span><span class="p">}</span>
+<span class="n">toolchainopts</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;pic&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;strict&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;openmp&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s1">&#39;usempi&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">}</span> <span class="c1"># See README.md</span>
+
+<span class="c1"># https://github.com/nest/nest-simulator/archive/v2.20.0.zip</span>
+<span class="n">sources</span> <span class="o">=</span> <span class="p">[</span> <span class="p">{</span> 
+    <span class="s1">&#39;download_filename&#39;</span><span class="p">:</span> <span class="s1">&#39;v</span><span class="si">%(version)s</span><span class="s1">.zip&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;filename&#39;</span><span class="p">:</span>          <span class="s1">&#39;nest-simulator-</span><span class="si">%(version)s</span><span class="s1">.zip&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span>       <span class="p">[</span><span class="s1">&#39;https://github.com/nest/nest-simulator/archive&#39;</span><span class="p">]</span>
+<span class="p">}</span> <span class="p">]</span>
+<span class="n">checksums</span> <span class="o">=</span>   <span class="p">[</span><span class="s1">&#39;e458f9f30883369964b60931cb767f145fb5c5504652e6cdaabedf14b188aa03&#39;</span><span class="p">]</span>
+
+<span class="n">dependencies</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s1">&#39;baselibs&#39;</span><span class="p">,</span> <span class="n">local_buildset</span><span class="p">,</span>        <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;GCCcore&#39;</span><span class="p">,</span> <span class="n">local_gcc_version</span><span class="p">)),</span> <span class="c1"># libreadline, ncurses, GSL, zlib, buildtools</span>
+    <span class="p">(</span><span class="s1">&#39;Python&#39;</span><span class="p">,</span>   <span class="n">local_Python3_version</span><span class="p">),</span>
+<span class="p">]</span>
+
+<span class="n">builddependencies</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s1">&#39;buildtools&#39;</span><span class="p">,</span> <span class="n">local_buildset</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span>  <span class="c1"># CMake, pkg-config, doxygen?</span>
+<span class="p">]</span>
+
+<span class="n">configopts</span>  <span class="o">=</span> <span class="s1">&#39;-DCMAKE_INSTALL_LIBDIR=lib -Dwith-mpi=ON -Dwith-openmp=ON &#39;</span>
+<span class="n">configopts</span> <span class="o">+=</span> <span class="s1">&#39;-Dwith-optimize=OFF -Dwith-intel-compiler-flags=&quot; &quot; &#39;</span> <span class="c1"># As flags are passed by EasyBuild already and picked up.</span>
+<span class="n">configopts</span> <span class="o">+=</span> <span class="s1">&#39;-Dwith-python=3 &#39;</span>
+<span class="n">configopts</span> <span class="o">+=</span> <span class="s1">&#39;-Dwith-readline=$EBROOTBASELIBS &#39;</span>
+<span class="n">configopts</span> <span class="o">+=</span> <span class="s1">&#39;-Dwith-gsl=$EBROOTBASELIBS &#39;</span>
+<span class="n">configopts</span> <span class="o">+=</span> <span class="s1">&#39;-Dwith-ltdl=$EBROOTBASELIBS &#39;</span>
+<span class="n">configopts</span> <span class="o">+=</span> <span class="s1">&#39;-DCMAKE_C_FLAGS_RELEASE=&quot;-DNDEBUG&quot; &#39;</span>
+
+<span class="n">modextravars</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;NEST_INSTALL_DIR&#39;</span><span class="p">:</span>   <span class="s1">&#39;</span><span class="si">%(installdir)s</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;NEST_DATA_DIR&#39;</span><span class="p">:</span>      <span class="s1">&#39;</span><span class="si">%(installdir)s</span><span class="s1">/share/nest&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;NEST_DOC_DIR&#39;</span><span class="p">:</span>       <span class="s1">&#39;</span><span class="si">%(installdir)s</span><span class="s1">/share/doc/nest&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;NEST_MODULE_PATH&#39;</span><span class="p">:</span>   <span class="s1">&#39;</span><span class="si">%(installdir)s</span><span class="s1">/lib/nest&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;NEST_PYTHON_PREFIX&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">%(installdir)s</span><span class="s1">/lib/python</span><span class="si">%(pyshortver)s</span><span class="s1">/site-packages&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">modextrapaths</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;PYTHONPATH&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;lib/python</span><span class="si">%(pyshortver)s</span><span class="s1">/site-packages&#39;</span><span class="p">],</span>
+<span class="p">}</span>
+
+<span class="n">sanity_check_paths</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;files&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;bin/nest&#39;</span><span class="p">,</span> <span class="s1">&#39;lib/libnest.</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">SHLIB_EXT</span><span class="p">,</span> <span class="s1">&#39;lib/libmodels.</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="n">SHLIB_EXT</span><span class="p">],</span>
+    <span class="s1">&#39;dirs&#39;</span><span class="p">:</span>  <span class="p">[</span><span class="s1">&#39;lib/python</span><span class="si">%(pyshortver)s</span><span class="s1">/site-packages&#39;</span><span class="p">],</span>
+<span class="p">}</span>
+
+<span class="n">moduleclass</span> <span class="o">=</span> <span class="s1">&#39;bio&#39;</span>
+</code></pre></div>
 <p><a href="../">[NEST]</a> <a href="../../..">[package list]</a></p>
 
               

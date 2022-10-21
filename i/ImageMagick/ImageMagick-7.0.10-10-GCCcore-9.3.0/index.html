@@ -942,86 +942,109 @@
 
 <p><a href="../">[ImageMagick]</a> <a href="../../..">[package list]</a></p>
 <h1 id="imagemagick-7010-10-gcccore-930eb">ImageMagick-7.0.10-10-GCCcore-9.3.0.eb</h1>
-<p>``` python</p>
-<h1 id="this-file-is-an-easybuild-recipy-as-per-httpsgithubcomeasybuilderseasybuild">This file is an EasyBuild reciPY as per https://github.com/easybuilders/easybuild</h1>
-<h1 id="author-ravi-tripathi">Author: Ravi Tripathi</h1>
-<h1 id="email-ravi89uabedu">Email: ravi89@uab.edu</h1>
-<p>easyblock = 'ConfigureMake'</p>
-<p>local_buildset         = '2020a'
-local_gcc_version      = '9.3.0'
-local_binutils_version = '2.34'</p>
-<p>local_Ghostscript_version = '9.52'                # https://www.ghostscript.com/index.html
-local_ImageMagick_version = '7.0.10-10'           # https://github.com/ImageMagick/ImageMagick/releases
-local_LittleCMS_version =   '2.9'                 # http://www.littlecms.com</p>
-<p>name =    'ImageMagick'
-version = local_ImageMagick_version</p>
-<p>homepage = 'http://www.imagemagick.org/'</p>
-<p>whatis = [
-    "Description: ImageMagick is a software suite to create, edit, compose, or convert bitmap images",
-    "Keywords: Visualization",
-]</p>
-<p>description = """
-ImageMagick is a software suite to create, edit, compose, or convert bitmap images</p>
-<p>It can read and write images in a variety of formats (over 200) including PNG,
-JPEG, GIF, HEIC, TIFF, DPX, EXR, WebP, Postscript, PDF, and SVG. Use ImageMagick
-to resize, flip, mirror, rotate, distort, shear and transform images, adjust
-image colors, apply various special effects, or draw text, lines, polygons,
-ellipses and Bézier curves.</p>
-<p>ImageMagick is free software delivered as a ready-to-run binary distribution or
-as source code that you may use, copy, modify, and distribute in both open and
-proprietary applications. It is distributed under a derived Apache 2.0 license.</p>
-<p>ImageMagick utilizes multiple computational threads to increase performance and
-can read, process, or write mega-, giga-, or tera-pixel image sizes.
-"""</p>
-<p>usage = """
-Note that the ImageMagick commands don't have very well chosen names. They may clash
-with other commands on the system, so you may need to specify the full path to access
-the ImageMagick commands or those other commands depending on the specific PATH.</p>
-<p>The module also creates aliases for all ImageMagick commands that do not contain 
-"Magick" or "magick" in their name. E.g., magick-animate is an alias for animate.
-"""</p>
-<p>docurls = [
-    "Man pages (section 1) for all commands"
-]</p>
-<p>toolchain = {'name': 'GCCcore', 'version': local_gcc_version}</p>
-<h1 id="httpsgithubcomimagemagickimagemagickarchive708-27targz">https://github.com/ImageMagick/ImageMagick/archive/7.0.8-27.tar.gz</h1>
-<p>sources = [
-    { 'filename':          'ImageMagick-%(version)s.tar.gz',
-      'download_filename': '%(version)s.tar.gz',
-      'source_urls':       ['https://github.com/ImageMagick/ImageMagick/archive'],
-    }
-]</p>
-<p>checksums = ['52afac02954c6c6f593e2842fbecb630a765e2152eb84a5f4bb47429ae20db5a']</p>
-<p>dependencies = [
-    ('baselibs',    local_buildset), # For bzip2, LibTIFF, JasPer, libjpeg-turbo
-    ('X11',         local_buildset),
-    ('Ghostscript', local_Ghostscript_version),
-    ('LittleCMS',   local_LittleCMS_version),
-]</p>
-<p>builddependencies = [
-    ('binutils',   local_binutils_version),
-    ('buildtools', local_buildset,         '', True), # for pkg-config.
-]</p>
-<p>configopts = "--with-gslib --with-x"</p>
-<p>sanity_check_paths = {
-    'files': [],
-    'dirs': ['bin', 'etc/%(name)s-%(version_major)s', 'include/%(name)s-%(version_major)s', 'lib', 'share'],
-}</p>
-<p>modextravars = {'MAGICK_HOME': '%(installdir)s'}</p>
-<p>modaliases = {
-    'magick-animate':    '%(installdir)s/bin/animate',
-    'magick-compare':    '%(installdir)s/bin/compare',
-    'magick-composite':  '%(installdir)s/bin/composite',
-    'magick-conjure':    '%(installdir)s/bin/conjure',
-    'magick-convert':    '%(installdir)s/bin/convert',
-    'magick-display':    '%(installdir)s/bin/display',
-    'magick-identify':   '%(installdir)s/bin/identify',
-    'magick-import':     '%(installdir)s/bin/import',
-    'magick-mogrify':    '%(installdir)s/bin/mogrify',
-    'magick-montage':    '%(installdir)s/bin/montage',
-    'magick-stream':     '%(installdir)s/bin/stream',
-}</p>
-<p>moduleclass = 'vis'```</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># This file is an EasyBuild reciPY as per https://github.com/easybuilders/easybuild</span>
+<span class="c1"># Author: Ravi Tripathi</span>
+<span class="c1"># Email: ravi89@uab.edu</span>
+
+<span class="n">easyblock</span> <span class="o">=</span> <span class="s1">&#39;ConfigureMake&#39;</span>
+
+<span class="n">local_buildset</span>         <span class="o">=</span> <span class="s1">&#39;2020a&#39;</span>
+<span class="n">local_gcc_version</span>      <span class="o">=</span> <span class="s1">&#39;9.3.0&#39;</span>
+<span class="n">local_binutils_version</span> <span class="o">=</span> <span class="s1">&#39;2.34&#39;</span>
+
+<span class="n">local_Ghostscript_version</span> <span class="o">=</span> <span class="s1">&#39;9.52&#39;</span>                <span class="c1"># https://www.ghostscript.com/index.html</span>
+<span class="n">local_ImageMagick_version</span> <span class="o">=</span> <span class="s1">&#39;7.0.10-10&#39;</span>           <span class="c1"># https://github.com/ImageMagick/ImageMagick/releases</span>
+<span class="n">local_LittleCMS_version</span> <span class="o">=</span>   <span class="s1">&#39;2.9&#39;</span>                 <span class="c1"># http://www.littlecms.com</span>
+
+<span class="n">name</span> <span class="o">=</span>    <span class="s1">&#39;ImageMagick&#39;</span>
+<span class="n">version</span> <span class="o">=</span> <span class="n">local_ImageMagick_version</span>
+
+<span class="n">homepage</span> <span class="o">=</span> <span class="s1">&#39;http://www.imagemagick.org/&#39;</span>
+
+<span class="n">whatis</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;Description: ImageMagick is a software suite to create, edit, compose, or convert bitmap images&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Keywords: Visualization&quot;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">ImageMagick is a software suite to create, edit, compose, or convert bitmap images</span>
+
+<span class="s2">It can read and write images in a variety of formats (over 200) including PNG,</span>
+<span class="s2">JPEG, GIF, HEIC, TIFF, DPX, EXR, WebP, Postscript, PDF, and SVG. Use ImageMagick</span>
+<span class="s2">to resize, flip, mirror, rotate, distort, shear and transform images, adjust</span>
+<span class="s2">image colors, apply various special effects, or draw text, lines, polygons,</span>
+<span class="s2">ellipses and Bézier curves.</span>
+
+<span class="s2">ImageMagick is free software delivered as a ready-to-run binary distribution or</span>
+<span class="s2">as source code that you may use, copy, modify, and distribute in both open and</span>
+<span class="s2">proprietary applications. It is distributed under a derived Apache 2.0 license.</span>
+
+<span class="s2">ImageMagick utilizes multiple computational threads to increase performance and</span>
+<span class="s2">can read, process, or write mega-, giga-, or tera-pixel image sizes.</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="n">usage</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Note that the ImageMagick commands don&#39;t have very well chosen names. They may clash</span>
+<span class="s2">with other commands on the system, so you may need to specify the full path to access</span>
+<span class="s2">the ImageMagick commands or those other commands depending on the specific PATH.</span>
+
+<span class="s2">The module also creates aliases for all ImageMagick commands that do not contain </span>
+<span class="s2">&quot;Magick&quot; or &quot;magick&quot; in their name. E.g., magick-animate is an alias for animate.</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="n">docurls</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;Man pages (section 1) for all commands&quot;</span>
+<span class="p">]</span>
+
+<span class="n">toolchain</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;GCCcore&#39;</span><span class="p">,</span> <span class="s1">&#39;version&#39;</span><span class="p">:</span> <span class="n">local_gcc_version</span><span class="p">}</span>
+
+<span class="c1"># https://github.com/ImageMagick/ImageMagick/archive/7.0.8-27.tar.gz</span>
+<span class="n">sources</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span> <span class="s1">&#39;filename&#39;</span><span class="p">:</span>          <span class="s1">&#39;ImageMagick-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+      <span class="s1">&#39;download_filename&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
+      <span class="s1">&#39;source_urls&#39;</span><span class="p">:</span>       <span class="p">[</span><span class="s1">&#39;https://github.com/ImageMagick/ImageMagick/archive&#39;</span><span class="p">],</span>
+    <span class="p">}</span>
+<span class="p">]</span>
+
+<span class="n">checksums</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;52afac02954c6c6f593e2842fbecb630a765e2152eb84a5f4bb47429ae20db5a&#39;</span><span class="p">]</span>
+
+<span class="n">dependencies</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s1">&#39;baselibs&#39;</span><span class="p">,</span>    <span class="n">local_buildset</span><span class="p">),</span> <span class="c1"># For bzip2, LibTIFF, JasPer, libjpeg-turbo</span>
+    <span class="p">(</span><span class="s1">&#39;X11&#39;</span><span class="p">,</span>         <span class="n">local_buildset</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;Ghostscript&#39;</span><span class="p">,</span> <span class="n">local_Ghostscript_version</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;LittleCMS&#39;</span><span class="p">,</span>   <span class="n">local_LittleCMS_version</span><span class="p">),</span>
+<span class="p">]</span>
+
+<span class="n">builddependencies</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s1">&#39;binutils&#39;</span><span class="p">,</span>   <span class="n">local_binutils_version</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;buildtools&#39;</span><span class="p">,</span> <span class="n">local_buildset</span><span class="p">,</span>         <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span> <span class="c1"># for pkg-config.</span>
+<span class="p">]</span>
+
+<span class="n">configopts</span> <span class="o">=</span> <span class="s2">&quot;--with-gslib --with-x&quot;</span>
+
+<span class="n">sanity_check_paths</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;files&#39;</span><span class="p">:</span> <span class="p">[],</span>
+    <span class="s1">&#39;dirs&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;bin&#39;</span><span class="p">,</span> <span class="s1">&#39;etc/</span><span class="si">%(name)s</span><span class="s1">-</span><span class="si">%(version_major)s</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;include/</span><span class="si">%(name)s</span><span class="s1">-</span><span class="si">%(version_major)s</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;lib&#39;</span><span class="p">,</span> <span class="s1">&#39;share&#39;</span><span class="p">],</span>
+<span class="p">}</span>
+
+<span class="n">modextravars</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;MAGICK_HOME&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">%(installdir)s</span><span class="s1">&#39;</span><span class="p">}</span>
+
+<span class="n">modaliases</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;magick-animate&#39;</span><span class="p">:</span>    <span class="s1">&#39;</span><span class="si">%(installdir)s</span><span class="s1">/bin/animate&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;magick-compare&#39;</span><span class="p">:</span>    <span class="s1">&#39;</span><span class="si">%(installdir)s</span><span class="s1">/bin/compare&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;magick-composite&#39;</span><span class="p">:</span>  <span class="s1">&#39;</span><span class="si">%(installdir)s</span><span class="s1">/bin/composite&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;magick-conjure&#39;</span><span class="p">:</span>    <span class="s1">&#39;</span><span class="si">%(installdir)s</span><span class="s1">/bin/conjure&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;magick-convert&#39;</span><span class="p">:</span>    <span class="s1">&#39;</span><span class="si">%(installdir)s</span><span class="s1">/bin/convert&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;magick-display&#39;</span><span class="p">:</span>    <span class="s1">&#39;</span><span class="si">%(installdir)s</span><span class="s1">/bin/display&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;magick-identify&#39;</span><span class="p">:</span>   <span class="s1">&#39;</span><span class="si">%(installdir)s</span><span class="s1">/bin/identify&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;magick-import&#39;</span><span class="p">:</span>     <span class="s1">&#39;</span><span class="si">%(installdir)s</span><span class="s1">/bin/import&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;magick-mogrify&#39;</span><span class="p">:</span>    <span class="s1">&#39;</span><span class="si">%(installdir)s</span><span class="s1">/bin/mogrify&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;magick-montage&#39;</span><span class="p">:</span>    <span class="s1">&#39;</span><span class="si">%(installdir)s</span><span class="s1">/bin/montage&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;magick-stream&#39;</span><span class="p">:</span>     <span class="s1">&#39;</span><span class="si">%(installdir)s</span><span class="s1">/bin/stream&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">moduleclass</span> <span class="o">=</span> <span class="s1">&#39;vis&#39;</span>
+</code></pre></div>
 <p><a href="../">[ImageMagick]</a> <a href="../../..">[package list]</a></p>
 
               

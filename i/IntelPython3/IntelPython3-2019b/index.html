@@ -942,27 +942,35 @@
 
 <p><a href="../">[IntelPython3]</a> <a href="../../..">[package list]</a></p>
 <h1 id="intelpython3-2019beb">IntelPython3-2019b.eb</h1>
-<p>``` python</p>
-<h1 id="important-note-this-is-just-a-dummy-easyconfig-create-2019b-as-an-alias-or">IMPORTANT NOTE: This is just a dummy easyconfig, create 2019b as an alias or</h1>
-<h1 id="symbolic-link-to-the-proper-2019bxx-module-file-that-is-actually-in-use">symbolic link to the proper 2019b.XX module file that is actually in use.</h1>
-<h1 id="it-is-needed-though-for-easybuild-to-get-the-right-dependency-change">It is needed though for EasyBuild to get the right dependency change</h1>
-<p>easyblock = 'Bundle'</p>
-<p>name =    'IntelPython3'
-version = '2019b'</p>
-<p>local_intelpython_version = version + '.05'</p>
-<p>homepage = 'https://software.intel.com/en-us/distribution-for-python'</p>
-<p>whatis = [
-    'Description: Dummy IntelPython3 module; this should never have been installed and lmod aliases or symbolic links should have been used instead.',
-]</p>
-<p>description = """
-Dummy IntelPython3 module; this should never have been installed and lmod 
-aliases or symbolic links should have been used instead.
-]""" </p>
-<p>toolchain = {'name': 'dummy', 'version': ''}</p>
-<p>dependencies = [
-    ('IntelPython3',  local_intelpython_version), # Not really needed as all libraries are included through symbolic links
-]</p>
-<p>moduleclass = 'lang'```</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># IMPORTANT NOTE: This is just a dummy easyconfig, create 2019b as an alias or</span>
+<span class="c1"># symbolic link to the proper 2019b.XX module file that is actually in use.</span>
+<span class="c1"># It is needed though for EasyBuild to get the right dependency change</span>
+<span class="n">easyblock</span> <span class="o">=</span> <span class="s1">&#39;Bundle&#39;</span>
+
+<span class="n">name</span> <span class="o">=</span>    <span class="s1">&#39;IntelPython3&#39;</span>
+<span class="n">version</span> <span class="o">=</span> <span class="s1">&#39;2019b&#39;</span>
+
+<span class="n">local_intelpython_version</span> <span class="o">=</span> <span class="n">version</span> <span class="o">+</span> <span class="s1">&#39;.05&#39;</span>
+
+<span class="n">homepage</span> <span class="o">=</span> <span class="s1">&#39;https://software.intel.com/en-us/distribution-for-python&#39;</span>
+
+<span class="n">whatis</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;Description: Dummy IntelPython3 module; this should never have been installed and lmod aliases or symbolic links should have been used instead.&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Dummy IntelPython3 module; this should never have been installed and lmod </span>
+<span class="s2">aliases or symbolic links should have been used instead.</span>
+<span class="s2">]&quot;&quot;&quot;</span> 
+
+<span class="n">toolchain</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;dummy&#39;</span><span class="p">,</span> <span class="s1">&#39;version&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">}</span>
+
+<span class="n">dependencies</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s1">&#39;IntelPython3&#39;</span><span class="p">,</span>  <span class="n">local_intelpython_version</span><span class="p">),</span> <span class="c1"># Not really needed as all libraries are included through symbolic links</span>
+<span class="p">]</span>
+
+<span class="n">moduleclass</span> <span class="o">=</span> <span class="s1">&#39;lang&#39;</span>
+</code></pre></div>
 <p><a href="../">[IntelPython3]</a> <a href="../../..">[package list]</a></p>
 
               

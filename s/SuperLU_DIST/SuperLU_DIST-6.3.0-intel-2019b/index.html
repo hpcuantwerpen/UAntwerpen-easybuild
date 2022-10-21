@@ -942,42 +942,55 @@
 
 <p><a href="../">[SuperLU_DIST]</a> <a href="../../..">[package list]</a></p>
 <h1 id="superlu_dist-630-intel-2019beb">SuperLU_DIST-6.3.0-intel-2019b.eb</h1>
-<p>``` python</p>
-<p>easyblock = 'EB_SuperLU'</p>
-<p>name =    'SuperLU_DIST'
-version = '6.3.0'</p>
-<p>local_scotch_ver = '6.0.7'</p>
-<p>local_buildset = '2019b'</p>
-<p>homepage = 'https://github.com/xiaoyeli/SuperLU'</p>
-<p>description = """
-SuperLU is a general purpose library for the direct solution of large, 
-sparse, nonsymmetric systems of linear equations on distributed high 
-performance machines.
-"""</p>
-<p>toolchain =     {'name': 'intel', 'version': local_buildset}
-toolchainopts = {'pic': True, 'usempi': True}</p>
-<p>source_urls = ['https://portal.nersc.gov/project/sparse/superlu/']
-sources =     ['superlu_dist_%(version)s.tar.gz']</p>
-<h1 id="patches-superlu-use-ptscotch-for-metispatch">patches =     ['superlu-use-ptscotch-for-metis.patch']</h1>
-<p>checksums = [
-    '293cd22b3de83934bb0275fa8046617f88b6e8c0892312056fe14a66429b071f',  # superlu_dist_5.3.0.tar.gz</p>
-<h1 id="098190c274c348c8fe0f487a3c3594befba3a500cb7c279d390965a1616dcbb6-superlu-use-ptscotch-for-metispatch">'098190c274c348c8fe0f487a3c3594befba3a500cb7c279d390965a1616dcbb6',  # superlu-use-ptscotch-for-metis.patch</h1>
-<p>]</p>
-<p>builddependencies = [
-    ('buildtools', local_buildset, '', True), # for CMake
-]</p>
-<p>dependencies = [
-    ('SCOTCH', local_scotch_ver, '-compat-SuperLU')
-]</p>
-<p>configopts = [ "-DUSE_XSDK_DEFAULTS=FALSE -Denable_blaslib=OFF " +
-               "-DTPL_PARMETIS_LIBRARIES='-lptscotchparmetis -lptscotch -lscotchmetis -lscotch -lptscotcherr -lz' " +
-               "-DTPL_PARMETIS_INCLUDE_DIRS=$EBROOTSCOTCH/include" ]</p>
-<p>skipsteps = ['test']</p>
-<p>sanity_check_paths = {
-    'files': ['include/superlu_defs.h', ('lib/libsuperlu_dist.a', 'lib64/libsuperlu_dist.a')],
-    'dirs':  []
-}</p>
-<p>moduleclass = 'numlib'```</p>
+<div class="highlight"><pre><span></span><code><span class="n">easyblock</span> <span class="o">=</span> <span class="s1">&#39;EB_SuperLU&#39;</span>
+
+<span class="n">name</span> <span class="o">=</span>    <span class="s1">&#39;SuperLU_DIST&#39;</span>
+<span class="n">version</span> <span class="o">=</span> <span class="s1">&#39;6.3.0&#39;</span>
+
+<span class="n">local_scotch_ver</span> <span class="o">=</span> <span class="s1">&#39;6.0.7&#39;</span>
+
+<span class="n">local_buildset</span> <span class="o">=</span> <span class="s1">&#39;2019b&#39;</span>
+
+<span class="n">homepage</span> <span class="o">=</span> <span class="s1">&#39;https://github.com/xiaoyeli/SuperLU&#39;</span>
+
+<span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">SuperLU is a general purpose library for the direct solution of large, </span>
+<span class="s2">sparse, nonsymmetric systems of linear equations on distributed high </span>
+<span class="s2">performance machines.</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="n">toolchain</span> <span class="o">=</span>     <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;intel&#39;</span><span class="p">,</span> <span class="s1">&#39;version&#39;</span><span class="p">:</span> <span class="n">local_buildset</span><span class="p">}</span>
+<span class="n">toolchainopts</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;pic&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;usempi&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">}</span>
+
+<span class="n">source_urls</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;https://portal.nersc.gov/project/sparse/superlu/&#39;</span><span class="p">]</span>
+<span class="n">sources</span> <span class="o">=</span>     <span class="p">[</span><span class="s1">&#39;superlu_dist_</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">]</span>
+<span class="c1">#patches =     [&#39;superlu-use-ptscotch-for-metis.patch&#39;]</span>
+<span class="n">checksums</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;293cd22b3de83934bb0275fa8046617f88b6e8c0892312056fe14a66429b071f&#39;</span><span class="p">,</span>  <span class="c1"># superlu_dist_5.3.0.tar.gz</span>
+<span class="c1">#    &#39;098190c274c348c8fe0f487a3c3594befba3a500cb7c279d390965a1616dcbb6&#39;,  # superlu-use-ptscotch-for-metis.patch</span>
+<span class="p">]</span>
+
+<span class="n">builddependencies</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s1">&#39;buildtools&#39;</span><span class="p">,</span> <span class="n">local_buildset</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span> <span class="c1"># for CMake</span>
+<span class="p">]</span>
+
+<span class="n">dependencies</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s1">&#39;SCOTCH&#39;</span><span class="p">,</span> <span class="n">local_scotch_ver</span><span class="p">,</span> <span class="s1">&#39;-compat-SuperLU&#39;</span><span class="p">)</span>
+<span class="p">]</span>
+
+<span class="n">configopts</span> <span class="o">=</span> <span class="p">[</span> <span class="s2">&quot;-DUSE_XSDK_DEFAULTS=FALSE -Denable_blaslib=OFF &quot;</span> <span class="o">+</span>
+               <span class="s2">&quot;-DTPL_PARMETIS_LIBRARIES=&#39;-lptscotchparmetis -lptscotch -lscotchmetis -lscotch -lptscotcherr -lz&#39; &quot;</span> <span class="o">+</span>
+               <span class="s2">&quot;-DTPL_PARMETIS_INCLUDE_DIRS=$EBROOTSCOTCH/include&quot;</span> <span class="p">]</span>
+
+<span class="n">skipsteps</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">]</span>
+
+<span class="n">sanity_check_paths</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;files&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;include/superlu_defs.h&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;lib/libsuperlu_dist.a&#39;</span><span class="p">,</span> <span class="s1">&#39;lib64/libsuperlu_dist.a&#39;</span><span class="p">)],</span>
+    <span class="s1">&#39;dirs&#39;</span><span class="p">:</span>  <span class="p">[]</span>
+<span class="p">}</span>
+
+<span class="n">moduleclass</span> <span class="o">=</span> <span class="s1">&#39;numlib&#39;</span>
+</code></pre></div>
 <p><a href="../">[SuperLU_DIST]</a> <a href="../../..">[package list]</a></p>
 
               

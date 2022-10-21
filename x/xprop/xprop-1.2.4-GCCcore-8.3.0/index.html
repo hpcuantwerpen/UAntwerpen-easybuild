@@ -942,39 +942,50 @@
 
 <p><a href="../">[xprop]</a> <a href="../../..">[package list]</a></p>
 <h1 id="xprop-124-gcccore-830eb">xprop-1.2.4-GCCcore-8.3.0.eb</h1>
-<p>``` python</p>
-<p>easyblock = 'ConfigureMake'</p>
-<p>name =    'xprop'
-version = '1.2.4'</p>
-<p>local_buildset =         '2019b'
-local_gcc_version =      '8.3.0'
-local_binutils_version = '2.32'</p>
-<p>homepage = "http://www.x.org/wiki/"</p>
-<p>whatis = [
-    "Description: xprop is a utility for displayin window and font properties in an X server."  <br />
-]</p>
-<p>description = """
-The xprop utility is for displaying window and font properties in an X server.
-One window or font is selected using the command line arguments or possibly
-in the case of a window, by clicking on the desired window. A list of
-properties is then given, possibly with formatting information.
-"""</p>
-<p>toolchain = {'name': 'GCCcore', 'version': local_gcc_version}</p>
-<p>source_urls = ['http://ftp.x.org/archive/individual/app/']
-sources =     [SOURCE_TAR_BZ2]
-checksums =   ['8c77fb096e46c60032b7e2bde9492c3ffcc18734f50b395085a5f10bfd3cf753']</p>
-<p>builddependencies = [
-    ('binutils',   local_binutils_version),
-    ('buildtools', local_buildset,         '', True), # for pkg-config.
-]</p>
-<p>dependencies = [
-    ('X11', local_buildset, '', ('GCCcore', local_gcc_version)),
-]</p>
-<p>sanity_check_paths = {
-    'files': ['bin/xprop'],
-    'dirs':  [],
-}</p>
-<p>moduleclass = 'vis'```</p>
+<div class="highlight"><pre><span></span><code><span class="n">easyblock</span> <span class="o">=</span> <span class="s1">&#39;ConfigureMake&#39;</span>
+
+<span class="n">name</span> <span class="o">=</span>    <span class="s1">&#39;xprop&#39;</span>
+<span class="n">version</span> <span class="o">=</span> <span class="s1">&#39;1.2.4&#39;</span>
+
+<span class="n">local_buildset</span> <span class="o">=</span>         <span class="s1">&#39;2019b&#39;</span>
+<span class="n">local_gcc_version</span> <span class="o">=</span>      <span class="s1">&#39;8.3.0&#39;</span>
+<span class="n">local_binutils_version</span> <span class="o">=</span> <span class="s1">&#39;2.32&#39;</span>
+
+<span class="n">homepage</span> <span class="o">=</span> <span class="s2">&quot;http://www.x.org/wiki/&quot;</span>
+
+<span class="n">whatis</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;Description: xprop is a utility for displayin window and font properties in an X server.&quot;</span>    
+<span class="p">]</span>
+
+<span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">The xprop utility is for displaying window and font properties in an X server.</span>
+<span class="s2">One window or font is selected using the command line arguments or possibly</span>
+<span class="s2">in the case of a window, by clicking on the desired window. A list of</span>
+<span class="s2">properties is then given, possibly with formatting information.</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="n">toolchain</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;GCCcore&#39;</span><span class="p">,</span> <span class="s1">&#39;version&#39;</span><span class="p">:</span> <span class="n">local_gcc_version</span><span class="p">}</span>
+
+<span class="n">source_urls</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;http://ftp.x.org/archive/individual/app/&#39;</span><span class="p">]</span>
+<span class="n">sources</span> <span class="o">=</span>     <span class="p">[</span><span class="n">SOURCE_TAR_BZ2</span><span class="p">]</span>
+<span class="n">checksums</span> <span class="o">=</span>   <span class="p">[</span><span class="s1">&#39;8c77fb096e46c60032b7e2bde9492c3ffcc18734f50b395085a5f10bfd3cf753&#39;</span><span class="p">]</span>
+
+<span class="n">builddependencies</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s1">&#39;binutils&#39;</span><span class="p">,</span>   <span class="n">local_binutils_version</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;buildtools&#39;</span><span class="p">,</span> <span class="n">local_buildset</span><span class="p">,</span>         <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span> <span class="c1"># for pkg-config.</span>
+<span class="p">]</span>
+
+<span class="n">dependencies</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s1">&#39;X11&#39;</span><span class="p">,</span> <span class="n">local_buildset</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;GCCcore&#39;</span><span class="p">,</span> <span class="n">local_gcc_version</span><span class="p">)),</span>
+<span class="p">]</span>
+
+<span class="n">sanity_check_paths</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;files&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;bin/xprop&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;dirs&#39;</span><span class="p">:</span>  <span class="p">[],</span>
+<span class="p">}</span>
+
+<span class="n">moduleclass</span> <span class="o">=</span> <span class="s1">&#39;vis&#39;</span>
+</code></pre></div>
 <p><a href="../">[xprop]</a> <a href="../../..">[package list]</a></p>
 
               
