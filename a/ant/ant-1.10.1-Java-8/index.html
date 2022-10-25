@@ -942,29 +942,41 @@
 
 <p><a href="../">[ant]</a> <a href="../../..">[package list]</a></p>
 <h1 id="ant-1101-java-8eb">ant-1.10.1-Java-8.eb</h1>
-<div class="highlight"><pre><span></span><code><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;ant&#39;</span>
+<div class="highlight"><pre><span></span><code><span class="n">name</span> <span class="o">=</span>    <span class="s1">&#39;ant&#39;</span>
 <span class="n">version</span> <span class="o">=</span> <span class="s1">&#39;1.10.1&#39;</span>
 
 <span class="n">homepage</span> <span class="o">=</span> <span class="s1">&#39;http://ant.apache.org/&#39;</span>
-<span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;Apache Ant is a Java library and command-line tool whose mission is to drive processes described in build files</span>
-<span class="s2"> as targets and extension points dependent upon each other. The main known usage of Ant is the build of Java applications.&quot;&quot;&quot;</span>
 
-<span class="n">toolchain</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;dummy&#39;</span><span class="p">,</span> <span class="s1">&#39;version&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">}</span>
+<span class="n">whatis</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;Description: Apacke Ant Java library and command-line tools&quot;</span>
+<span class="p">]</span>
 
-<span class="n">sources</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;apache-</span><span class="si">%(name)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">-src.tar.gz&#39;</span><span class="p">]</span>
+<span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Apache Ant is a Java library and command-line tool whose mission is to drive </span>
+<span class="s2">processes described in build files as targets and extension points dependent </span>
+<span class="s2">upon each other. The main known usage of Ant is the build of Java applications.</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="n">toolchain</span> <span class="o">=</span> <span class="n">SYSTEM</span>
+
+<span class="n">sources</span> <span class="o">=</span>     <span class="p">[</span><span class="s1">&#39;apache-</span><span class="si">%(name)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">-src.tar.gz&#39;</span><span class="p">]</span>
 <span class="n">source_urls</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;http://archive.apache.org/dist/</span><span class="si">%(name)s</span><span class="s1">/source/&#39;</span><span class="p">]</span>
 
-<span class="n">java</span> <span class="o">=</span> <span class="s1">&#39;Java&#39;</span>
-<span class="n">javaver</span> <span class="o">=</span> <span class="s1">&#39;8&#39;</span>
-<span class="n">versionsuffix</span> <span class="o">=</span> <span class="s1">&#39;-</span><span class="si">%s</span><span class="s1">-</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">java</span><span class="p">,</span> <span class="n">javaver</span><span class="p">)</span>
+<span class="n">local_java</span> <span class="o">=</span> <span class="s1">&#39;Java&#39;</span>
+<span class="n">local_javaver</span> <span class="o">=</span> <span class="s1">&#39;8&#39;</span>
+<span class="n">versionsuffix</span> <span class="o">=</span> <span class="s1">&#39;-</span><span class="si">%s</span><span class="s1">-</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">local_java</span><span class="p">,</span> <span class="n">local_javaver</span><span class="p">)</span>
 
-<span class="n">dependencies</span> <span class="o">=</span> <span class="p">[(</span><span class="n">java</span><span class="p">,</span> <span class="n">javaver</span><span class="p">)]</span>
+<span class="n">dependencies</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="n">local_java</span><span class="p">,</span> <span class="n">local_javaver</span><span class="p">)</span>
+<span class="p">]</span>
 
-<span class="n">builddependencies</span> <span class="o">=</span> <span class="p">[(</span><span class="s1">&#39;JUnit&#39;</span><span class="p">,</span> <span class="s1">&#39;4.12&#39;</span><span class="p">,</span> <span class="n">versionsuffix</span><span class="p">)]</span>
+<span class="n">builddependencies</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="s1">&#39;JUnit&#39;</span><span class="p">,</span> <span class="s1">&#39;4.12&#39;</span><span class="p">,</span> <span class="n">versionsuffix</span><span class="p">)</span>
+<span class="p">]</span>
 
 <span class="n">sanity_check_paths</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;files&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;bin/ant&#39;</span><span class="p">,</span> <span class="s1">&#39;lib/ant.jar&#39;</span><span class="p">,</span> <span class="s1">&#39;lib/ant.jar&#39;</span><span class="p">],</span>
-    <span class="s1">&#39;dirs&#39;</span><span class="p">:</span> <span class="p">[],</span>
+    <span class="s1">&#39;dirs&#39;</span><span class="p">:</span>  <span class="p">[],</span>
 <span class="p">}</span>
 
 <span class="n">moduleclass</span> <span class="o">=</span> <span class="s1">&#39;devel&#39;</span>

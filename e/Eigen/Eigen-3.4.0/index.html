@@ -15,7 +15,7 @@
     
     
       
-        <title>Pilon-1.23-Java-11.eb - Pilon - UAntwerpen-modules documentation</title>
+        <title>Eigen-3.4.0.eb - Eigen - UAntwerpen-modules documentation</title>
       
     
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#pilon-123-java-11eb" class="md-skip">
+        <a href="#eigen-340eb" class="md-skip">
           Skip to content
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Pilon-1.23-Java-11.eb - Pilon
+              Eigen-3.4.0.eb - Eigen
             
           </span>
         </div>
@@ -940,58 +940,62 @@
                 
 
 
-<p><a href="../">[Pilon]</a> <a href="../../..">[package list]</a></p>
-<h1 id="pilon-123-java-11eb">Pilon-1.23-Java-11.eb</h1>
-<div class="highlight"><pre><span></span><code><span class="n">easyblock</span> <span class="o">=</span> <span class="s1">&#39;JAR&#39;</span>
+<p><a href="../">[Eigen]</a> <a href="../../..">[package list]</a></p>
+<h1 id="eigen-340eb">Eigen-3.4.0.eb</h1>
+<div class="highlight"><pre><span></span><code><span class="n">local_buildset</span> <span class="o">=</span> <span class="s1">&#39;2022a&#39;</span>
 
-<span class="n">local_Pilon_version</span> <span class="o">=</span>          <span class="s1">&#39;1.23&#39;</span>            <span class="c1"># https://github.com/broadinstitute/pilon</span>
+<span class="n">local_Eigen_version</span> <span class="o">=</span>          <span class="s1">&#39;3.4.0&#39;</span>           <span class="c1"># https://gitlab.com/libeigen/eigen/-/releases</span>
 
-<span class="n">name</span> <span class="o">=</span>          <span class="s1">&#39;Pilon&#39;</span>
-<span class="n">version</span> <span class="o">=</span>       <span class="n">local_Pilon_version</span>
-<span class="n">versionsuffix</span> <span class="o">=</span> <span class="s1">&#39;-Java-</span><span class="si">%(javaver)s</span><span class="s1">&#39;</span>
+<span class="n">name</span> <span class="o">=</span>    <span class="s1">&#39;Eigen&#39;</span>
+<span class="n">version</span> <span class="o">=</span> <span class="n">local_Eigen_version</span>
 
-<span class="n">homepage</span> <span class="o">=</span> <span class="s1">&#39;https://github.com/broadinstitute/pilon&#39;</span>
+<span class="n">homepage</span> <span class="o">=</span> <span class="s1">&#39;http://eigen.tuxfamily.org/&#39;</span>
 
 <span class="n">whatis</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s1">&#39;Description: Pilon is an automated genome assembly improvement and variant detection tool&#39;</span><span class="p">,</span>
+    <span class="s2">&quot;Description: Eigen is a C++ template library for linear algebra: matrices, vectors, numerical solvers, and related algorithms&quot;</span>
 <span class="p">]</span>
 
 <span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">Pilon is a software tool which can be used to automatically improve draft</span>
-<span class="s2">assemblies and to find variation among strains, including large event detection.</span>
+<span class="s2">Eigen is a C++ template library for linear algebra: matrices, vectors, numerical</span>
+<span class="s2">solvers, and related algorithms.</span>
 
-<span class="s2">Pilon is Java software so starting it is not completely straightforward.</span>
-<span class="s2">To execute Pilon run: java -Xmx8G -jar $EBROOTPILON/pilon-</span><span class="si">%(version)s</span><span class="s2">.jar</span>
-<span class="s2">or java -Xmx8G -jar $EBROOTPILON/pilon.jar</span>
-<span class="s2">Adjust the memory value according to the size of your input files</span>
+<span class="s2">Eigen is Free Software. Starting from the 3.1.1 version, it is licensed under</span>
+<span class="s2">the MPL2, which is a simple weak copyleft license. Common questions about the</span>
+<span class="s2">MPL2 are answered in the official MPL2 FAQ. Note that currently, a few features</span>
+<span class="s2">rely on third-party code licensed under the LGPL: SimplicialCholesky, AMD</span>
+<span class="s2">ordering, and constrained_cg. Such features can be explicitly disabled by</span>
+<span class="s2">compiling with the EIGEN_MPL2_ONLY preprocessor symbol defined. Furthermore,</span>
+<span class="s2">Eigen provides interface classes for various third-party libraries (usually</span>
+<span class="s2">recognizable by the &lt;Eigen/*Support&gt; header name). Of course you have to mind</span>
+<span class="s2">the license of the so-included library when using them. Virtually any software</span>
+<span class="s2">may use Eigen. For example, closed-source software may use Eigen without having</span>
+<span class="s2">to disclose its own source code. Many proprietary and closed-source software</span>
+<span class="s2">projects are using Eigen right now, as well as many BSD-licensed projects.</span>
+
+<span class="s2">As this module includes only templates in source form, it can be used with</span>
+<span class="s2">any suitable C++ compiler.</span>
 <span class="s2">&quot;&quot;&quot;</span>
+
+<span class="n">software_license_urls</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;https://www.mozilla.org/en-US/MPL/2.0/&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;https://www.gnu.org/licenses/lgpl-3.0.en.html&quot;</span><span class="p">,</span>
+<span class="p">]</span>
 
 <span class="n">toolchain</span> <span class="o">=</span> <span class="n">SYSTEM</span>
 
-<span class="n">source_urls</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;https://github.com/broadinstitute/pilon/releases/download/v</span><span class="si">%(version)s</span><span class="s1">/&#39;</span><span class="p">]</span>
-<span class="n">sources</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;</span><span class="si">%(namelower)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">.jar&#39;</span><span class="p">]</span>
-<span class="n">checksums</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;bde1d3c8da5537abbc80627f0b2a4165c2b68551690e5733a6adf62413b87185&#39;</span><span class="p">]</span>
+<span class="n">source_urls</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;https://gitlab.com/libeigen/eigen/-/archive/</span><span class="si">%(version)s</span><span class="s1">&#39;</span><span class="p">]</span>
+<span class="n">sources</span> <span class="o">=</span>     <span class="p">[</span><span class="n">SOURCELOWER_TAR_BZ2</span><span class="p">]</span>
+<span class="n">checksums</span> <span class="o">=</span>   <span class="p">[</span><span class="s1">&#39;b4c198460eba6f28d34894e3a5710998818515104d6e74e5cc331ce31e46e626&#39;</span><span class="p">]</span>
 
-<span class="n">dependencies</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">(</span><span class="s1">&#39;Java&#39;</span><span class="p">,</span> <span class="s1">&#39;11&#39;</span><span class="p">)</span>
+<span class="n">configopts</span> <span class="o">=</span> <span class="s1">&#39;-Wno-dev&#39;</span> <span class="c1"># Suppress warnings that are only for developers during the  CMake process.</span>
+
+<span class="n">builddependencies</span> <span class="o">=</span> <span class="p">[</span>
+   <span class="p">(</span> <span class="s1">&#39;buildtools&#39;</span><span class="p">,</span> <span class="n">local_buildset</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="kc">True</span> <span class="p">),</span>  <span class="c1"># For recent CMake</span>
 <span class="p">]</span>
 
-<span class="n">postinstallcmds</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;cd </span><span class="si">%(installdir)s</span><span class="s1"> &amp;&amp; ln -s </span><span class="si">%(namelower)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">.jar pilon.jar&#39;</span><span class="p">]</span>
-
-<span class="n">sanity_check_paths</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;files&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;pilon-</span><span class="si">%(version)s</span><span class="s1">.jar&#39;</span><span class="p">],</span>
-    <span class="s1">&#39;dirs&#39;</span><span class="p">:</span>  <span class="p">[],</span>
-<span class="p">}</span>
-
-<span class="n">modloadmsg</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">To execute Pilon run: java -Xmx8G -jar $EBROOTPILON/pilon-</span><span class="si">%(version)s</span><span class="s2">.jar</span>
-<span class="s2">or: java -Xmx8G -jar $EBROOTPILON/pilon.jar</span>
-<span class="s2">Adjust the memory value according to the size of your input files</span>
-<span class="s2">&quot;&quot;&quot;</span>
-
-<span class="n">moduleclass</span> <span class="o">=</span> <span class="s1">&#39;bio&#39;</span>
+<span class="n">moduleclass</span> <span class="o">=</span> <span class="s1">&#39;math&#39;</span>
 </code></pre></div>
-<p><a href="../">[Pilon]</a> <a href="../../..">[package list]</a></p>
+<p><a href="../">[Eigen]</a> <a href="../../..">[package list]</a></p>
 
               
             </article>

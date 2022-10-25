@@ -941,6 +941,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#technical-documentation" class="md-nav__link">
+    Technical documentation
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -960,7 +967,43 @@
 <h2 id="available-easyconfigs">Available EasyConfigs</h2>
 <ul>
 <li><a href="Jmol-14.30.1-Java-11/">Jmol-14.30.1-Java-11.eb</a></li>
+<li><a href="Jmol-14.32.78-Java-11/">Jmol-14.32.78-Java-11.eb</a></li>
 </ul>
+<h2 id="technical-documentation">Technical documentation</h2>
+<p>Links:</p>
+<ul>
+<li>
+<p><a href="http://jmol.sourceforge.net/">Jmol web site</a> (and this page can be accessed as 
+  <a href="http://www.jmol.org/">www.jmol.org</a> also)</p>
+</li>
+<li>
+<p><a href="http://jmol.sourceforge.net/docs/">Jmol documentation</a> is integrated on the web site. 
+  At this time (December 2019) the link to the Wiki []wiki.jmol.org](http://wiki.jmol.org/index.php/Literature) 
+  does not work.</p>
+</li>
+<li>
+<p><a href="https://sourceforge.net/projects/jmol/">Actual repository on SourceForge</a></p>
+</li>
+<li>
+<p>Somewhere in the SourceForge pages it is said that development is moving to
+  <a href="https://github.com/BobHanson/Jmol-SwingJS">GitHub</a>.</p>
+</li>
+</ul>
+<p>From the summary page on SourceForge: <em>Jmol/JSmol is a molecular viewer for 3D chemical 
+structures that runs in four independent modes: an HTML5-only web application utilizing 
+jQuery, a Java applet, a stand-alone Java program (Jmol.jar), and a "headless" server-side 
+component (JmolData.jar). Jmol can read many file types, including PDB, CIF, SDF, MOL, PyMOL 
+PSE files, and Spartan files, as well as output from Gaussian, GAMESS, MOPAC, VASP, CRYSTAL, 
+CASTEP, QuantumEspresso, VMD, and many other quantum chemistry programs. Files can be 
+transferred directly from several databases, including RCSB, EDS, NCI, PubChem, and 
+MaterialsProject. Multiple files can be loaded and compared. A rich scripting language and 
+a well-developed web API allow easy customization of the user interface. Features include 
+interactive animation and linear morphing. Jmol interfaces well with JSpecView for spectroscopy, 
+JSME for 2D-&gt;3D conversion, POV-Ray for images, and CAD programs for 3D printing (VRML export).</em></p>
+<p>However, since the login and visualisation nodes of our cluster are not meant to offer 
+web services, the EasyConfig files in this repository only install the stand-alone 
+Java program and "headless" component JmolData.jar. The shell scripts to start Jmol
+are also included.</p>
 <p><a href="../..">[package list]</a></p>
 
               

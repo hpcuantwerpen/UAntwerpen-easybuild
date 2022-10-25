@@ -15,7 +15,7 @@
     
     
       
-        <title>Pilon-1.23-Java-11.eb - Pilon - UAntwerpen-modules documentation</title>
+        <title>ant-1.10.12-Java-11.eb - ant - UAntwerpen-modules documentation</title>
       
     
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#pilon-123-java-11eb" class="md-skip">
+        <a href="#ant-11012-java-11eb" class="md-skip">
           Skip to content
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Pilon-1.23-Java-11.eb - Pilon
+              ant-1.10.12-Java-11.eb - ant
             
           </span>
         </div>
@@ -940,58 +940,46 @@
                 
 
 
-<p><a href="../">[Pilon]</a> <a href="../../..">[package list]</a></p>
-<h1 id="pilon-123-java-11eb">Pilon-1.23-Java-11.eb</h1>
-<div class="highlight"><pre><span></span><code><span class="n">easyblock</span> <span class="o">=</span> <span class="s1">&#39;JAR&#39;</span>
+<p><a href="../">[ant]</a> <a href="../../..">[package list]</a></p>
+<h1 id="ant-11012-java-11eb">ant-1.10.12-Java-11.eb</h1>
+<div class="highlight"><pre><span></span><code><span class="n">easyblock</span> <span class="o">=</span> <span class="s1">&#39;PackedBinary&#39;</span>
 
-<span class="n">local_Pilon_version</span> <span class="o">=</span>          <span class="s1">&#39;1.23&#39;</span>            <span class="c1"># https://github.com/broadinstitute/pilon</span>
-
-<span class="n">name</span> <span class="o">=</span>          <span class="s1">&#39;Pilon&#39;</span>
-<span class="n">version</span> <span class="o">=</span>       <span class="n">local_Pilon_version</span>
+<span class="n">name</span> <span class="o">=</span>          <span class="s1">&#39;ant&#39;</span>
+<span class="n">version</span> <span class="o">=</span>       <span class="s1">&#39;1.10.12&#39;</span>
 <span class="n">versionsuffix</span> <span class="o">=</span> <span class="s1">&#39;-Java-</span><span class="si">%(javaver)s</span><span class="s1">&#39;</span>
 
-<span class="n">homepage</span> <span class="o">=</span> <span class="s1">&#39;https://github.com/broadinstitute/pilon&#39;</span>
+<span class="n">homepage</span> <span class="o">=</span> <span class="s1">&#39;http://ant.apache.org/&#39;</span>
 
 <span class="n">whatis</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s1">&#39;Description: Pilon is an automated genome assembly improvement and variant detection tool&#39;</span><span class="p">,</span>
+    <span class="s2">&quot;Description: Apacke Ant Java library and command-line tools&quot;</span>
 <span class="p">]</span>
 
 <span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">Pilon is a software tool which can be used to automatically improve draft</span>
-<span class="s2">assemblies and to find variation among strains, including large event detection.</span>
-
-<span class="s2">Pilon is Java software so starting it is not completely straightforward.</span>
-<span class="s2">To execute Pilon run: java -Xmx8G -jar $EBROOTPILON/pilon-</span><span class="si">%(version)s</span><span class="s2">.jar</span>
-<span class="s2">or java -Xmx8G -jar $EBROOTPILON/pilon.jar</span>
-<span class="s2">Adjust the memory value according to the size of your input files</span>
+<span class="s2">Apache Ant is a Java library and command-line tool whose mission is to drive </span>
+<span class="s2">processes described in build files as targets and extension points dependent </span>
+<span class="s2">upon each other. The main known usage of Ant is the build of Java applications.</span>
 <span class="s2">&quot;&quot;&quot;</span>
 
 <span class="n">toolchain</span> <span class="o">=</span> <span class="n">SYSTEM</span>
 
-<span class="n">source_urls</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;https://github.com/broadinstitute/pilon/releases/download/v</span><span class="si">%(version)s</span><span class="s1">/&#39;</span><span class="p">]</span>
-<span class="n">sources</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;</span><span class="si">%(namelower)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">.jar&#39;</span><span class="p">]</span>
-<span class="n">checksums</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;bde1d3c8da5537abbc80627f0b2a4165c2b68551690e5733a6adf62413b87185&#39;</span><span class="p">]</span>
+<span class="n">source_urls</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;https://archive.apache.org/dist/ant/binaries/&#39;</span><span class="p">]</span>
+<span class="n">sources</span> <span class="o">=</span>     <span class="p">[</span><span class="s1">&#39;apache-</span><span class="si">%(name)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">-bin.tar.gz&#39;</span><span class="p">]</span>
+<span class="n">checksums</span> <span class="o">=</span>   <span class="p">[</span><span class="s1">&#39;4b3b557279bae4fb80210a5679180fdae3498b44cfd13368e3386e2a21dd853b&#39;</span><span class="p">]</span>
 
 <span class="n">dependencies</span> <span class="o">=</span> <span class="p">[</span>
     <span class="p">(</span><span class="s1">&#39;Java&#39;</span><span class="p">,</span> <span class="s1">&#39;11&#39;</span><span class="p">)</span>
 <span class="p">]</span>
 
-<span class="n">postinstallcmds</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;cd </span><span class="si">%(installdir)s</span><span class="s1"> &amp;&amp; ln -s </span><span class="si">%(namelower)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">.jar pilon.jar&#39;</span><span class="p">]</span>
-
 <span class="n">sanity_check_paths</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;files&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;pilon-</span><span class="si">%(version)s</span><span class="s1">.jar&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;files&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;bin/ant&#39;</span><span class="p">,</span> <span class="s1">&#39;lib/ant.jar&#39;</span><span class="p">,</span> <span class="s1">&#39;lib/ant.jar&#39;</span><span class="p">],</span>
     <span class="s1">&#39;dirs&#39;</span><span class="p">:</span>  <span class="p">[],</span>
 <span class="p">}</span>
 
-<span class="n">modloadmsg</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">To execute Pilon run: java -Xmx8G -jar $EBROOTPILON/pilon-</span><span class="si">%(version)s</span><span class="s2">.jar</span>
-<span class="s2">or: java -Xmx8G -jar $EBROOTPILON/pilon.jar</span>
-<span class="s2">Adjust the memory value according to the size of your input files</span>
-<span class="s2">&quot;&quot;&quot;</span>
+<span class="n">modextravars</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;ANT_HOME&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">%(installdir)s</span><span class="s1">&#39;</span><span class="p">}</span>
 
-<span class="n">moduleclass</span> <span class="o">=</span> <span class="s1">&#39;bio&#39;</span>
+<span class="n">moduleclass</span> <span class="o">=</span> <span class="s1">&#39;devel&#39;</span>
 </code></pre></div>
-<p><a href="../">[Pilon]</a> <a href="../../..">[package list]</a></p>
+<p><a href="../">[ant]</a> <a href="../../..">[package list]</a></p>
 
               
             </article>

@@ -15,7 +15,7 @@
     
     
       
-        <title>Pilon-1.23-Java-11.eb - Pilon - UAntwerpen-modules documentation</title>
+        <title>Jmol-14.32.78-Java-11.eb - Jmol - UAntwerpen-modules documentation</title>
       
     
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#pilon-123-java-11eb" class="md-skip">
+        <a href="#jmol-143278-java-11eb" class="md-skip">
           Skip to content
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Pilon-1.23-Java-11.eb - Pilon
+              Jmol-14.32.78-Java-11.eb - Jmol
             
           </span>
         </div>
@@ -940,58 +940,103 @@
                 
 
 
-<p><a href="../">[Pilon]</a> <a href="../../..">[package list]</a></p>
-<h1 id="pilon-123-java-11eb">Pilon-1.23-Java-11.eb</h1>
-<div class="highlight"><pre><span></span><code><span class="n">easyblock</span> <span class="o">=</span> <span class="s1">&#39;JAR&#39;</span>
+<p><a href="../">[Jmol]</a> <a href="../../..">[package list]</a></p>
+<h1 id="jmol-143278-java-11eb">Jmol-14.32.78-Java-11.eb</h1>
+<div class="highlight"><pre><span></span><code><span class="n">easyblock</span> <span class="o">=</span> <span class="s1">&#39;MakeCp&#39;</span>
 
-<span class="n">local_Pilon_version</span> <span class="o">=</span>          <span class="s1">&#39;1.23&#39;</span>            <span class="c1"># https://github.com/broadinstitute/pilon</span>
+<span class="n">name</span> <span class="o">=</span>          <span class="s1">&#39;Jmol&#39;</span>
+<span class="n">version</span> <span class="o">=</span>       <span class="s1">&#39;14.32.78&#39;</span>
+<span class="n">local_java</span> <span class="o">=</span>    <span class="s1">&#39;Java&#39;</span>
+<span class="n">local_javaver</span> <span class="o">=</span> <span class="s1">&#39;11&#39;</span>
+<span class="n">versionsuffix</span> <span class="o">=</span> <span class="s1">&#39;-</span><span class="si">%s</span><span class="s1">-</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">local_java</span><span class="p">,</span> <span class="n">local_javaver</span><span class="p">)</span>
 
-<span class="n">name</span> <span class="o">=</span>          <span class="s1">&#39;Pilon&#39;</span>
-<span class="n">version</span> <span class="o">=</span>       <span class="n">local_Pilon_version</span>
-<span class="n">versionsuffix</span> <span class="o">=</span> <span class="s1">&#39;-Java-</span><span class="si">%(javaver)s</span><span class="s1">&#39;</span>
-
-<span class="n">homepage</span> <span class="o">=</span> <span class="s1">&#39;https://github.com/broadinstitute/pilon&#39;</span>
+<span class="n">homepage</span> <span class="o">=</span> <span class="s1">&#39;http://jmol.sourceforge.net/&#39;</span>
 
 <span class="n">whatis</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s1">&#39;Description: Pilon is an automated genome assembly improvement and variant detection tool&#39;</span><span class="p">,</span>
+    <span class="s2">&quot;Description: Jmol is an interactive viewer for three-dimensnional chemical structures&quot;</span>
 <span class="p">]</span>
 
 <span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">Pilon is a software tool which can be used to automatically improve draft</span>
-<span class="s2">assemblies and to find variation among strains, including large event detection.</span>
+<span class="s2">Jmol is a molecular viewer for 3D chemical structures implemented as a stand-alone local_java program </span>
+<span class="s2">(Jmol.jar). Jmol can read many file types, including PDB, CIF, SDF, MOL, PyMOL PSE files, </span>
+<span class="s2">and Spartan files, as well as output from Gaussian, GAMESS, MOPAC, VASP, CRYSTAL, CASTEP, </span>
+<span class="s2">QuantumEspresso, VMD, and many other quantum chemistry programs. Files can be transferred </span>
+<span class="s2">directly from several databases, including RCSB, EDS, NCI, PubChem, and MaterialsProject. </span>
+<span class="s2">Multiple files can be loaded and compared. A rich scripting language and a well-developed </span>
+<span class="s2">web API allow easy customization of the user interface. Features include interactive animation </span>
+<span class="s2">and linear morphing. Jmol interfaces well with JSpecView for spectroscopy, JSME for </span>
+<span class="s2">2D-&gt;3D conversion, POV-Ray for images, and CAD programs for 3D printing (VRML export).</span>
 
-<span class="s2">Pilon is Java software so starting it is not completely straightforward.</span>
-<span class="s2">To execute Pilon run: java -Xmx8G -jar $EBROOTPILON/pilon-</span><span class="si">%(version)s</span><span class="s2">.jar</span>
-<span class="s2">or java -Xmx8G -jar $EBROOTPILON/pilon.jar</span>
-<span class="s2">Adjust the memory value according to the size of your input files</span>
+<span class="s2">This module only supports the Jmol Java apps, not the other modes of running Jmol.</span>
 <span class="s2">&quot;&quot;&quot;</span>
+
+<span class="n">usage</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">The following Jmol commands are supported:</span>
+<span class="s2">* jmol.sh: Script that starts Jmol</span>
+<span class="s2">* jmol:    Alternative script to start Jmol</span>
+
+<span class="s2">Note that since this is an X program, your terminal window on the cluster needs to be</span>
+<span class="s2">connected to a X server. Hence either use ssh -X with an X server on your desktop/laptop</span>
+<span class="s2">or a VNC session.</span>
+
+<span class="s2">WARNING: Java is not a good friend of X11 and remote computing. Java user interfaces</span>
+<span class="s2">can be slow when run over an X11 connection. Moreover, we have experienced that</span>
+<span class="s2">Java GUI programs start background processes that are not properly closed when</span>
+<span class="s2">closing the app, causing ssh connections to hang. For Jmol in particular, we have</span>
+<span class="s2">seen that processes named dbus-launch and dbus-daemon are started but not </span>
+<span class="s2">properly closed. Hence if you log out from your ssh session that maintains the</span>
+<span class="s2">tunnel for X11, that ssh session will hang until you manually kill those</span>
+<span class="s2">processes.</span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="n">docurls</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;Web-based documentation on http://jmol.sourceforge.net/docs/&quot;</span><span class="p">,</span>
+<span class="p">]</span>
 
 <span class="n">toolchain</span> <span class="o">=</span> <span class="n">SYSTEM</span>
 
-<span class="n">source_urls</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;https://github.com/broadinstitute/pilon/releases/download/v</span><span class="si">%(version)s</span><span class="s1">/&#39;</span><span class="p">]</span>
-<span class="n">sources</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;</span><span class="si">%(namelower)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">.jar&#39;</span><span class="p">]</span>
-<span class="n">checksums</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;bde1d3c8da5537abbc80627f0b2a4165c2b68551690e5733a6adf62413b87185&#39;</span><span class="p">]</span>
+<span class="n">local_version_maj_min</span> <span class="o">=</span> <span class="s1">&#39;.&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">version</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[:</span><span class="mi">2</span><span class="p">])</span>
+<span class="c1"># https://sourceforge.net/projects/jmol/files/Jmol/Version%2014.32/Jmol%2014.32.78/jmol-14.32.78-binary.zip/download</span>
+<span class="n">sources</span> <span class="o">=</span>     <span class="p">[</span><span class="s1">&#39;</span><span class="si">%(namelower)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">-binary.zip&#39;</span><span class="p">]</span>
+<span class="n">source_urls</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;https://sourceforge.net/projects/jmol/files/Jmol/Version%20&#39;</span> <span class="o">+</span> <span class="n">local_version_maj_min</span> <span class="o">+</span> <span class="s1">&#39;/Jmol%20&#39;</span> <span class="o">+</span> <span class="n">version</span><span class="p">]</span>
+<span class="n">checksums</span> <span class="o">=</span>   <span class="p">[</span><span class="s1">&#39;8ff3b73b618f036cfd61a93f5e39601ad28821821a3328cfd44e82fbd006c3f8&#39;</span><span class="p">]</span>
 
 <span class="n">dependencies</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">(</span><span class="s1">&#39;Java&#39;</span><span class="p">,</span> <span class="s1">&#39;11&#39;</span><span class="p">)</span>
+    <span class="p">(</span><span class="n">local_java</span><span class="p">,</span> <span class="n">local_javaver</span><span class="p">)</span>
 <span class="p">]</span>
 
-<span class="n">postinstallcmds</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;cd </span><span class="si">%(installdir)s</span><span class="s1"> &amp;&amp; ln -s </span><span class="si">%(namelower)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">.jar pilon.jar&#39;</span><span class="p">]</span>
+<span class="n">skipsteps</span> <span class="o">=</span> <span class="p">[</span> <span class="s1">&#39;configure&#39;</span><span class="p">,</span> <span class="s1">&#39;build&#39;</span><span class="p">]</span>
+
+<span class="n">files_to_copy</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">([</span><span class="s1">&#39;jmol&#39;</span><span class="p">,</span> <span class="s1">&#39;jmol.sh&#39;</span><span class="p">],</span> <span class="s1">&#39;bin&#39;</span><span class="p">),</span>
+    <span class="p">([</span><span class="s1">&#39;Jmol.jar&#39;</span><span class="p">,</span> <span class="s1">&#39;JSpecView.jar&#39;</span><span class="p">,</span> <span class="s1">&#39;JmolLib.jar&#39;</span><span class="p">,</span> <span class="s1">&#39;JmolData.jar&#39;</span><span class="p">,</span> <span class="s1">&#39;jspecview.properties&#39;</span><span class="p">],</span> <span class="s1">&#39;jars&#39;</span><span class="p">),</span>
+    <span class="s1">&#39;CHANGES.txt&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;COPYRIGHT.txt&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;LEAME.txt&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;LICENSE.txt&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;README.txt&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="n">postinstallcmds</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;cd </span><span class="si">%(installdir)s</span><span class="s1">/bin ; chmod a+x *&#39;</span><span class="p">,</span>
+<span class="p">]</span>
 
 <span class="n">sanity_check_paths</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;files&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;pilon-</span><span class="si">%(version)s</span><span class="s1">.jar&#39;</span><span class="p">],</span>
-    <span class="s1">&#39;dirs&#39;</span><span class="p">:</span>  <span class="p">[],</span>
+    <span class="s1">&#39;files&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;bin/jmol.sh&#39;</span><span class="p">,</span> <span class="s1">&#39;jars/Jmol.jar&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;dirs&#39;</span><span class="p">:</span>  <span class="p">[</span><span class="s1">&#39;bin&#39;</span><span class="p">,</span> <span class="s1">&#39;jars&#39;</span><span class="p">],</span>
 <span class="p">}</span>
 
-<span class="n">modloadmsg</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">To execute Pilon run: java -Xmx8G -jar $EBROOTPILON/pilon-</span><span class="si">%(version)s</span><span class="s2">.jar</span>
-<span class="s2">or: java -Xmx8G -jar $EBROOTPILON/pilon.jar</span>
-<span class="s2">Adjust the memory value according to the size of your input files</span>
-<span class="s2">&quot;&quot;&quot;</span>
+<span class="n">modextrapaths</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;CLASSPATH&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;jars/Jmol.jar&#39;</span><span class="p">,</span> <span class="s1">&#39;jars/JSpecView.jar&#39;</span><span class="p">,</span> <span class="s1">&#39;jars/JmolLib.jar&#39;</span><span class="p">,</span> <span class="s1">&#39;jars/JmolData.jar&#39;</span><span class="p">],</span>
+<span class="p">}</span>
+
+<span class="n">modextravars</span> <span class="o">=</span> <span class="p">{</span> 
+    <span class="s1">&#39;JMOL_HOME&#39;</span> <span class="p">:</span> <span class="s1">&#39;</span><span class="si">%(installdir)s</span><span class="s1">/jars&#39;</span> 
+<span class="p">}</span>
 
 <span class="n">moduleclass</span> <span class="o">=</span> <span class="s1">&#39;bio&#39;</span>
 </code></pre></div>
-<p><a href="../">[Pilon]</a> <a href="../../..">[package list]</a></p>
+<p><a href="../">[Jmol]</a> <a href="../../..">[package list]</a></p>
 
               
             </article>

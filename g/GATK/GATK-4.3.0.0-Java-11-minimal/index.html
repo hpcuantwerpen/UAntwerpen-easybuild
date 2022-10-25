@@ -15,7 +15,7 @@
     
     
       
-        <title>Pilon-1.23-Java-11.eb - Pilon - UAntwerpen-modules documentation</title>
+        <title>GATK-4.3.0.0-Java-11-minimal.eb - GATK - UAntwerpen-modules documentation</title>
       
     
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#pilon-123-java-11eb" class="md-skip">
+        <a href="#gatk-4300-java-11-minimaleb" class="md-skip">
           Skip to content
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Pilon-1.23-Java-11.eb - Pilon
+              GATK-4.3.0.0-Java-11-minimal.eb - GATK
             
           </span>
         </div>
@@ -940,58 +940,116 @@
                 
 
 
-<p><a href="../">[Pilon]</a> <a href="../../..">[package list]</a></p>
-<h1 id="pilon-123-java-11eb">Pilon-1.23-Java-11.eb</h1>
-<div class="highlight"><pre><span></span><code><span class="n">easyblock</span> <span class="o">=</span> <span class="s1">&#39;JAR&#39;</span>
+<p><a href="../">[GATK]</a> <a href="../../..">[package list]</a></p>
+<h1 id="gatk-4300-java-11-minimaleb">GATK-4.3.0.0-Java-11-minimal.eb</h1>
+<div class="highlight"><pre><span></span><code><span class="n">easyblock</span> <span class="o">=</span> <span class="s1">&#39;Tarball&#39;</span>
 
-<span class="n">local_Pilon_version</span> <span class="o">=</span>          <span class="s1">&#39;1.23&#39;</span>            <span class="c1"># https://github.com/broadinstitute/pilon</span>
+<span class="n">name</span> <span class="o">=</span>          <span class="s1">&#39;GATK&#39;</span>
+<span class="n">version</span> <span class="o">=</span>       <span class="s1">&#39;4.3.0.0&#39;</span>
 
-<span class="n">name</span> <span class="o">=</span>          <span class="s1">&#39;Pilon&#39;</span>
-<span class="n">version</span> <span class="o">=</span>       <span class="n">local_Pilon_version</span>
-<span class="n">versionsuffix</span> <span class="o">=</span> <span class="s1">&#39;-Java-</span><span class="si">%(javaver)s</span><span class="s1">&#39;</span>
+<span class="n">local_java_version</span> <span class="o">=</span> <span class="s1">&#39;11&#39;</span> <span class="c1"># It is not clear from the release notes to which extent Java 11 is tested.</span>
+                          <span class="c1"># It was work in progress for version 4.1.4.0.</span>
 
-<span class="n">homepage</span> <span class="o">=</span> <span class="s1">&#39;https://github.com/broadinstitute/pilon&#39;</span>
+<span class="n">versionsuffix</span> <span class="o">=</span> <span class="s1">&#39;-Java-</span><span class="si">%(javaver)s</span><span class="s1">-minimal&#39;</span>
+
+<span class="n">homepage</span> <span class="o">=</span> <span class="s1">&#39;https://www.broadinstitute.org/gatk/&#39;</span>
 
 <span class="n">whatis</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s1">&#39;Description: Pilon is an automated genome assembly improvement and variant detection tool&#39;</span><span class="p">,</span>
+    <span class="s2">&quot;Description: GATK is the Genome Analysis Toolkit from the Broad Institute&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;WARNING: This is a minimal installation without the Python and R dependencies&quot;</span>
 <span class="p">]</span>
 
 <span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">Pilon is a software tool which can be used to automatically improve draft</span>
-<span class="s2">assemblies and to find variation among strains, including large event detection.</span>
+<span class="s2">The GATK (Genome Analysis Toolkit) is the industry standard for identifying SNPs </span>
+<span class="s2">and indels in germline DNA and RNAseq data. Its scope is now expanding to include </span>
+<span class="s2">somatic short variant calling, and to tackle copy number (CNV) and structural </span>
+<span class="s2">variation (SV). In addition to the variant callers themselves, the GATK also </span>
+<span class="s2">includes many utilities to perform related tasks such as processing and quality </span>
+<span class="s2">control of high-throughput sequencing data, and bundles the popular Picard toolkit.</span>
 
-<span class="s2">Pilon is Java software so starting it is not completely straightforward.</span>
-<span class="s2">To execute Pilon run: java -Xmx8G -jar $EBROOTPILON/pilon-</span><span class="si">%(version)s</span><span class="s2">.jar</span>
-<span class="s2">or java -Xmx8G -jar $EBROOTPILON/pilon.jar</span>
-<span class="s2">Adjust the memory value according to the size of your input files</span>
+<span class="s2">These tools were primarily designed to process exomes and whole genomes generated </span>
+<span class="s2">with Illumina sequencing technology, but they can be adapted to handle a variety </span>
+<span class="s2">of other technologies and experimental designs. And although it was originally </span>
+<span class="s2">developed for human genetics, the GATK has since evolved to handle genome data </span>
+<span class="s2">from any organism, with any level of ploidy.</span>
+
+<span class="s2">GATK4 aims to bring together well-established tools from the GATK and Picard codebases </span>
+<span class="s2">under a streamlined framework, and to enable selected tools to be run in a massively </span>
+<span class="s2">parallel way on local clusters or in the cloud using Apache Spark (the latter not</span>
+<span class="s2">supported at UAntwerp). It also contains many newly developed tools not present in </span>
+<span class="s2">earlier releases of the toolkit.</span>
+
+<span class="s2">WARNING: This is a minimal installation without the Python and R dependencies (see </span>
+<span class="s2">&quot;Usage&quot;). </span>
+<span class="s2">&quot;&quot;&quot;</span>
+
+<span class="n">usage</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">In a number of cases the default options that GATK uses for the Java virtual machine</span>
+<span class="s2">may not be sufficient or be far from optimal. this is especially true for options that</span>
+<span class="s2">set the amount of memory the Java virtual machine can use. E.g.,</span>
+<span class="s2">  ./gatk --java-options &quot;-Xmx4G -Xms4G&quot; &lt;rest of command&gt;</span>
+<span class="s2">will set the maximum size of the memory allocation pool to 4G and use that also as</span>
+<span class="s2">the initial size of the memory pool (so that memory use of the code will be fairly</span>
+<span class="s2">constant during the run).</span>
+
+<span class="s2">GATK does offer some support for bash command line completion. To activate it, run</span>
+<span class="s2">  source $EBROOTGATK/gatk-completion.sh</span>
+<span class="s2">in the bash shell.</span>
+
+<span class="s2">Some GATK4 tools use R for plotting. The list of R dependencies is not clear from the</span>
+<span class="s2">documentation. If you use these tools, you&#39;ll need to also load the appropriate R module</span>
+<span class="s2">for the toolchain, but even then additional packages may or may not be needed.</span>
+
+<span class="s2">Some GATK 4 tools use Python, including some tools that use machine learning</span>
+<span class="s2">(through TensorFlow and Keras). Again, the list of Python packages and version numbers</span>
+<span class="s2">that are actually supported by the code is not documented so you will have to</span>
+<span class="s2">experiment with various Python modules.</span>
+
+<span class="s2">We cannot support interfacing to the cloud or using spark on/from our HPC system.</span>
+
+<span class="s2">Any comments on software that is needed to run GATK successfully is welcome</span>
+<span class="s2">at hpc@uantwerpen.be so that we can further extend our installation script.</span>
 <span class="s2">&quot;&quot;&quot;</span>
 
 <span class="n">toolchain</span> <span class="o">=</span> <span class="n">SYSTEM</span>
 
-<span class="n">source_urls</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;https://github.com/broadinstitute/pilon/releases/download/v</span><span class="si">%(version)s</span><span class="s1">/&#39;</span><span class="p">]</span>
-<span class="n">sources</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;</span><span class="si">%(namelower)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">.jar&#39;</span><span class="p">]</span>
-<span class="n">checksums</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;bde1d3c8da5537abbc80627f0b2a4165c2b68551690e5733a6adf62413b87185&#39;</span><span class="p">]</span>
+<span class="n">source_urls</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;https://github.com/broadinstitute/gatk/releases/download/</span><span class="si">%(version)s</span><span class="s1">/&#39;</span><span class="p">]</span>
+<span class="n">sources</span> <span class="o">=</span>     <span class="p">[</span><span class="s1">&#39;gatk-</span><span class="si">%(version)s</span><span class="s1">.zip&#39;</span><span class="p">]</span>
+<span class="n">checksums</span> <span class="o">=</span>   <span class="p">[</span><span class="s1">&#39;e2c27229b34c3e22445964adf00639a0909887bbfcc040f6910079177bc6e2dd&#39;</span><span class="p">]</span>
 
 <span class="n">dependencies</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">(</span><span class="s1">&#39;Java&#39;</span><span class="p">,</span> <span class="s1">&#39;11&#39;</span><span class="p">)</span>
+    <span class="p">(</span><span class="s1">&#39;Java&#39;</span><span class="p">,</span> <span class="n">local_java_version</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">),</span>
 <span class="p">]</span>
 
-<span class="n">postinstallcmds</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;cd </span><span class="si">%(installdir)s</span><span class="s1"> &amp;&amp; ln -s </span><span class="si">%(namelower)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">.jar pilon.jar&#39;</span><span class="p">]</span>
+<span class="n">postinstallcmds</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;/bin/rm </span><span class="si">%(installdir)s</span><span class="s2">/gatk-package-</span><span class="si">%(version)s</span><span class="s2">-spark.jar&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;cd </span><span class="si">%(installdir)s</span><span class="s2"> ; mkdir -p python ; cd python ; unzip ../gatkPythonPackageArchive.zip&quot;</span><span class="p">,</span>
+<span class="p">]</span>
 
 <span class="n">sanity_check_paths</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;files&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;pilon-</span><span class="si">%(version)s</span><span class="s1">.jar&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;files&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;gatk&#39;</span><span class="p">],</span>
     <span class="s1">&#39;dirs&#39;</span><span class="p">:</span>  <span class="p">[],</span>
 <span class="p">}</span>
 
-<span class="n">modloadmsg</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">To execute Pilon run: java -Xmx8G -jar $EBROOTPILON/pilon-</span><span class="si">%(version)s</span><span class="s2">.jar</span>
-<span class="s2">or: java -Xmx8G -jar $EBROOTPILON/pilon.jar</span>
-<span class="s2">Adjust the memory value according to the size of your input files</span>
-<span class="s2">&quot;&quot;&quot;</span>
+<span class="n">sanity_check_commands</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s2">&quot;gatk --help&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;gatk --list&quot;</span><span class="p">,</span>  <span class="c1"># This actually calls the JVM so is a more complete test than the previous one.</span>
+<span class="p">]</span>
+
+<span class="n">modextrapaths</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;PATH&#39;</span><span class="p">:</span>       <span class="s1">&#39;&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;PYTHONPATH&#39;</span><span class="p">:</span> <span class="s1">&#39;python&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+
+<span class="n">modextravars</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;GATK_LOCAL_JAR&#39;</span><span class="p">:</span> <span class="s1">&#39;</span><span class="si">%(installdir)s</span><span class="s1">/gatk-package-</span><span class="si">%(version)s</span><span class="s1">-local.jar&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;GATK_JAR&#39;</span><span class="p">:</span>       <span class="s1">&#39;</span><span class="si">%(installdir)s</span><span class="s1">/gatk-package-</span><span class="si">%(version)s</span><span class="s1">-local.jar&#39;</span><span class="p">,</span>  <span class="c1"># Very likely not used but found it in a Docker file (see README.md).</span>
+<span class="p">}</span>
+
 
 <span class="n">moduleclass</span> <span class="o">=</span> <span class="s1">&#39;bio&#39;</span>
 </code></pre></div>
-<p><a href="../">[Pilon]</a> <a href="../../..">[package list]</a></p>
+<p><a href="../">[GATK]</a> <a href="../../..">[package list]</a></p>
 
               
             </article>

@@ -944,26 +944,26 @@
 <h1 id="junit-412-java-8eb">JUnit-4.12-Java-8.eb</h1>
 <div class="highlight"><pre><span></span><code><span class="n">easyblock</span> <span class="o">=</span> <span class="s1">&#39;JAR&#39;</span>
 
-<span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;JUnit&#39;</span>
+<span class="n">name</span> <span class="o">=</span>    <span class="s1">&#39;JUnit&#39;</span>
 <span class="n">version</span> <span class="o">=</span> <span class="s1">&#39;4.12&#39;</span>
 
 <span class="n">homepage</span> <span class="o">=</span> <span class="s1">&#39;http://sourceforge.net/projects/junit&#39;</span>
 <span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;A programmer-oriented testing framework for Java.&quot;&quot;&quot;</span>
 
-<span class="n">toolchain</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;dummy&#39;</span><span class="p">,</span> <span class="s1">&#39;version&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span><span class="p">}</span>
+<span class="n">toolchain</span> <span class="o">=</span> <span class="n">SYSTEM</span>
 
-<span class="n">sources</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;</span><span class="si">%(namelower)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">.jar&#39;</span><span class="p">]</span>
+<span class="n">sources</span> <span class="o">=</span>     <span class="p">[</span><span class="s1">&#39;</span><span class="si">%(namelower)s</span><span class="s1">-</span><span class="si">%(version)s</span><span class="s1">.jar&#39;</span><span class="p">]</span>
 <span class="n">source_urls</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;http://search.maven.org/remotecontent?filepath=junit/junit/</span><span class="si">%(version)s</span><span class="s1">/&#39;</span><span class="p">]</span>
 
-<span class="n">java</span> <span class="o">=</span> <span class="s1">&#39;Java&#39;</span>
-<span class="n">javaver</span> <span class="o">=</span> <span class="s1">&#39;8&#39;</span>
-<span class="n">versionsuffix</span> <span class="o">=</span> <span class="s1">&#39;-</span><span class="si">%s</span><span class="s1">-</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">java</span><span class="p">,</span> <span class="n">javaver</span><span class="p">)</span>
+<span class="n">local_java</span> <span class="o">=</span> <span class="s1">&#39;Java&#39;</span>
+<span class="n">local_local_javaver</span> <span class="o">=</span> <span class="s1">&#39;8&#39;</span>
+<span class="n">versionsuffix</span> <span class="o">=</span> <span class="s1">&#39;-</span><span class="si">%s</span><span class="s1">-</span><span class="si">%s</span><span class="s1">&#39;</span> <span class="o">%</span> <span class="p">(</span><span class="n">local_java</span><span class="p">,</span> <span class="n">local_local_javaver</span><span class="p">)</span>
 
-<span class="n">dependencies</span> <span class="o">=</span> <span class="p">[(</span><span class="n">java</span><span class="p">,</span> <span class="n">javaver</span><span class="p">)]</span>
+<span class="n">dependencies</span> <span class="o">=</span> <span class="p">[(</span><span class="n">local_java</span><span class="p">,</span> <span class="n">local_local_javaver</span><span class="p">)]</span>
 
 <span class="n">sanity_check_paths</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;files&#39;</span><span class="p">:</span> <span class="n">sources</span><span class="p">,</span>
-    <span class="s1">&#39;dirs&#39;</span><span class="p">:</span> <span class="p">[],</span>
+    <span class="s1">&#39;dirs&#39;</span><span class="p">:</span>  <span class="p">[],</span>
 <span class="p">}</span>
 
 <span class="n">moduleclass</span> <span class="o">=</span> <span class="s1">&#39;devel&#39;</span>
