@@ -1021,8 +1021,88 @@
 <h2 id="user-documentation">User documentation</h2>
 <p>Buildtools is a module meant to replace several separate build tools.
 It is designed to make it easy to create a more reproducible build environment
-by including it in the <code>builddependencies</code> of an EasyConfig.</p>
+by including it in the <code>builddependencies</code> of an EasyConfig. The binaries do 
+depend on some system libraries, but the module does try to minimise the surface
+of interaction with the system and the software being installed to minimise the
+chance that the build tools influence the configuration process of the software
+installation process.</p>
+<p>In the 2022a version, all tools depending on Python have been removed as they 
+turn out to interfer with packages being installed with newer Python versions. 
+These tools now come in a separate module, <code>buildtoold-python</code>, that can be
+rebuild for each Python implementation.</p>
 <p>The version number refers to the calcua software stack for which it is meant.</p>
+<p>Tools included:</p>
+<ul>
+<li>
+<p><a href="https://invisible-island.net/byacc/byacc.html">byacc (Berkeley Yacc)</a></p>
+</li>
+<li>
+<p><a href="https://sourceforge.net/projects/flex/">flex (Fast LEXical analyzer generator</a></p>
+</li>
+<li>
+<p><a href="https://git-scm.com/">git</a> </p>
+</li>
+<li>
+<p><a href="https://www.gnu.org/software/autoconf/">GNU Autoconf</a></p>
+</li>
+<li>
+<p><a href="https://www.gnu.org/software/automake/automake.html">GNU Automake</a></p>
+</li>
+<li>
+<p><a href="https://www.gnu.org/software/autoconf-archive">GNU Autoconf-archive</a></p>
+</li>
+<li>
+<p><a href="https://www.gnu.org/software/bison">GNU Bison</a></p>
+</li>
+<li>
+<p><a href="https://www.gnu.org/software/libtool">GNU libtool</a></p>
+</li>
+<li>
+<p><a href="https://www.gnu.org/software/m4/m4.html">GNU M4</a></p>
+</li>
+<li>
+<p><a href="https://www.gnu.org/software/make/make.html">GNU make</a></p>
+</li>
+<li>
+<p><a href="https://www.gnu.org/software/sed/">GNU sed</a></p>
+</li>
+<li>
+<p><a href="https://cmake.org/">CMake</a></p>
+</li>
+<li>
+<p><a href="https://ninja-build.org/">Ninja</a></p>
+</li>
+<li>
+<p><a href="https://www.nasm.us/">NASM</a></p>
+</li>
+<li>
+<p><a href="http://yasm.tortall.net/">Yasm</a></p>
+</li>
+<li>
+<p><a href="https://github.com/NixOS/patchelf">patchelf</a></p>
+</li>
+<li>
+<p><a href="http://www.freedesktop.org/wiki/Software/pkg-config/">pkg-config</a></p>
+</li>
+<li>
+<p><a href="https://www.gnu.org/software/gperf/">GNU perf</a></p>
+</li>
+<li>
+<p><a href="https://www.gnu.org/software/help2man/">GNU help2man</a></p>
+</li>
+<li>
+<p><a href="https://doxygen.nl/index.html">Doxygen</a></p>
+</li>
+<li>
+<p><a href="https://re2c.org/">re2c</a></p>
+</li>
+<li>
+<p><a href="https://mesonbuild.com">Meson</a> (2020a only)</p>
+</li>
+<li>
+<p><a href="https://www.scons.org/">SCons</a> (2020a only)</p>
+</li>
+</ul>
 <h2 id="available-easyconfigs">Available EasyConfigs</h2>
 <ul>
 <li><a href="buildtools-2020a-centos7/">buildtools-2020a-centos7.eb</a></li>
@@ -1044,106 +1124,106 @@ these problems.</p>
 <h3 id="contents">Contents</h3>
 <p>The contents of the module evolved over time. It does contain a subset of:</p>
 <ul>
-<li>byacc <ul>
+<li><a href="https://invisible-island.net/byacc/byacc.html">byacc (Berkeley Yacc)</a> <ul>
 <li><a href="https://invisible-mirror.net/archives/byacc/">version check download location</a></li>
 <li><a href="https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs/b/byacc">byacc in the EasyBuilders repository</a></li>
 </ul>
 </li>
-<li>flex <ul>
+<li><a href="https://sourceforge.net/projects/flex/">flex (Fast LEXical analyzer generator</a> <ul>
 <li><a href="https://github.com/westes/flex/releases">version check GitHub</a></li>
 <li><a href="https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs/f/flex">flex in the EasyBuilders repository</a></li>
 </ul>
 </li>
-<li>git <ul>
+<li><a href="https://git-scm.com/">git</a>  <ul>
 <li><a href="https://github.com/git/git/tags">version check GitHub</a></li>
 <li><a href="https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs/g/git">git in the EasyBuilders repository</a></li>
 </ul>
 </li>
-<li>GNU Autoconf <ul>
+<li><a href="https://www.gnu.org/software/autoconf/">GNU Autoconf</a> <ul>
 <li><a href="http://ftp.gnu.org/gnu/autoconf/">version check download location</a></li>
 <li><a href="https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs/a/Autoconf">Autoconf in the EasyBuilders repository</a></li>
 </ul>
 </li>
-<li>GNU Automake<ul>
+<li><a href="https://www.gnu.org/software/automake/automake.html">GNU Automake</a><ul>
 <li><a href="http://ftp.gnu.org/gnu/automake/">version check download location</a></li>
 <li><a href="https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs/a/Automake">Automake in the EasyBuilders repository</a></li>
 </ul>
 </li>
-<li>GNU Autoconf-archive<ul>
+<li><a href="https://www.gnu.org/software/autoconf-archive">GNU Autoconf-archive</a><ul>
 <li><a href="https://ftp.gnu.org/gnu/autoconf-archive/">version check download location</a></li>
 <li><a href="https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs/a/Autoconf-archive">Autoconf-archive in the EasyBuilders repository</a></li>
 </ul>
 </li>
-<li>GNU Bison <ul>
+<li><a href="https://www.gnu.org/software/bison">GNU Bison</a> <ul>
 <li><a href="https://ftp.gnu.org/gnu/bison/">version check on download location</a></li>
 <li><a href="https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs/b/Bison">Bison in the EasyBuilders repository</a></li>
 </ul>
 </li>
-<li>GNU libtool <ul>
+<li><a href="https://www.gnu.org/software/libtool">GNU libtool</a><ul>
 <li><a href="https://www.gnu.org/software/libtool/">version check on the download location</a></li>
 <li><a href="https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs/l/libtool">libtool in the EasyBuilders repository</a></li>
 </ul>
 </li>
-<li>GNU M4 <ul>
+<li><a href="https://www.gnu.org/software/m4/m4.html">GNU M4</a> <ul>
 <li><a href="https://ftp.gnu.org/gnu/m4/">version check on the download loacation</a>\</li>
 <li><a href="https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs/m/M4">M4 in the EasyBuilders repository</a></li>
 </ul>
 </li>
-<li>GNU make <ul>
+<li><a href="https://www.gnu.org/software/make/make.html">GNU make</a> <ul>
 <li><a href="http://ftp.gnu.org/gnu/make/">version check on the download location</a></li>
-<li>[make in the EasyBuilders repository]</li>
+<li><a href="https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs/m/make">make in the EasyBuilders repository</a></li>
 </ul>
 </li>
-<li>GNU sed <ul>
+<li><a href="https://www.gnu.org/software/sed/">GNU sed</a> <ul>
 <li><a href="http://ftp.gnu.org/gnu/sed/">version check on the download location</a></li>
 <li>No support for sed in the EasyBuilders repository</li>
 </ul>
 </li>
-<li>CMake <ul>
+<li><a href="https://cmake.org/">CMake</a> <ul>
 <li><a href="http://www.cmake.org/">version check on the CMake web site</a></li>
 <li><a href="https://github.com/Kitware/CMake/releases">Releases on the GitHub mirror of the development repository</a></li>
 <li><a href="https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs/c/CMake">CMake in the EasyBuilders repository</a></li>
 </ul>
 </li>
-<li>Ninja <ul>
+<li><a href="https://ninja-build.org/">Ninja</a> <ul>
 <li><a href="https://ninja-build.org/">version check on the Ninja web site</a></li>
 <li><a href="https://github.com/ninja-build/ninja/releases">Releases on the Ninja GitHub</a></li>
 <li><a href="https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs//n/Ninja">Ninja in the EAsyBuilders repository</a></li>
 </ul>
 </li>
-<li>NASM <ul>
+<li><a href="https://www.nasm.us/">NASM</a> <ul>
 <li><a href="http://www.nasm.us/">version check on the NASM web site</a></li>
 <li><a href="https://github.com/netwide-assembler/nasm/tags">Releases on the NASM GitHub</a></li>
 </ul>
 </li>
-<li>Yasm <ul>
+<li><a href="http://yasm.tortall.net/">Yasm</a> <ul>
 <li><a href="http://yasm.tortall.net/">version check on the Yasm web site</a></li>
 <li><a href="https://github.com/yasm/yasm/releases">Releases on the Yasm GitHub</a></li>
 <li><a href="https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs//y/Yasm">Yasm in th EasyBuilders repository</a></li>
 </ul>
 </li>
-<li>patchelf <ul>
+<li><a href="https://github.com/NixOS/patchelf">patchelf</a> <ul>
 <li><a href="https://github.com/NixOS/patchelf/releases">version check on the download location</a></li>
 <li><a href="https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs//p/patchelf">patchelf in the EasyBuilders repository</a></li>
 </ul>
 </li>
-<li>pkg-config <ul>
+<li><a href="http://www.freedesktop.org/wiki/Software/pkg-config/">pkg-config</a><ul>
 <li><a href="https://pkgconfig.freedesktop.org/releases/">version check on the download location</a></li>
 <li><a href="https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs//p/pkg-config">pkg-config in the EasyBuilders repository</a></li>
 </ul>
 </li>
-<li>GNU gperf<ul>
+<li><a href="https://www.gnu.org/software/gperf/">GNU perf</a><ul>
 <li><a href="https://www.gnu.org/software/gperf/">version check on the gperf web site</a></li>
 <li><a href="https://ftp.gnu.org/gnu/gperf/">version check on the download location</a></li>
 <li><a href="https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs//g/gperf">gperf in the EasyBuilders repository</a></li>
 </ul>
 </li>
-<li>GNU help2man <ul>
+<li><a href="https://www.gnu.org/software/help2man/">GNU help2man</a> <ul>
 <li><a href="http://ftpmirror.gnu.org/help2man/">version check on the download location</a></li>
 <li><a href="https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs//h/help2man">help2man in the EasyBuilders repository</a></li>
 </ul>
 </li>
-<li>Doxygen <ul>
+<li><a href="https://doxygen.nl/index.html">Doxygen</a> <ul>
 <li><a href="http://www.doxygen.nl/download.html">version check on the doxygen web site</a></li>
 <li><a href="https://github.com/doxygen/doxygen/tags">version check on the doxugen GitHub</a></li>
 <li><a href="https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs/d/Doxygen">Doxygen on the EasyBuilders web site</a></li>
@@ -1154,12 +1234,12 @@ these problems.</p>
 <li><a href="https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs/r/re2c">re2c in the EasyBuilders repository</a></li>
 </ul>
 </li>
-<li>Meson <ul>
+<li><a href="https://mesonbuild.com">Meson</a> <ul>
 <li><a href="https://pypi.org/project/meson/#history">version check on PyPi</a></li>
 <li><a href="https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs/m/Meson">Meson in the EasyBuilders repository</a></li>
 </ul>
 </li>
-<li>SCons<ul>
+<li><a href="https://www.scons.org/">SCons</a><ul>
 <li><a href="https://pypi.org/project/SCons/#history">Version check on PyPi</a></li>
 <li><a href="https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs/s/SCons">SCons in the EasyBuilders repository</a></li>
 </ul>
@@ -1212,9 +1292,16 @@ these problems.</p>
 </ul>
 <h4 id="2022a">2022a</h4>
 <ul>
-<li>Removed those packages that use the system Python and require PYTHONPATH to be
+<li>
+<p>Removed those packages that use the system Python and require PYTHONPATH to be
   set as they don't provide shell script wrappers: Meson and SCons. These will
-  appear in <code>buildtools-systempython</code> and <code>buildtools-python</code>.</li>
+  appear in <code>buildtools-systempython</code> and <code>buildtools-python</code>.</p>
+</li>
+<li>
+<p>Made sure that only static libraries are generated, and those are removed at the
+  end of the build process to ensure that programs that use buildtools will not try
+  to use those libraries when configuring.</p>
+</li>
 </ul>
 <p>Versions used:</p>
 <ul>
@@ -1225,7 +1312,7 @@ these problems.</p>
 <li>GNU Automake 1.16.2</li>
 <li>GNU Autoconf-archive 2022.09.03</li>
 <li>GNU Bison 3.8.2</li>
-<li>GNU libtool 2.4.6</li>
+<li>GNU libtool 2.4.7</li>
 <li>GNU M4 1.4.19</li>
 <li>GNU make 4.3. Switched back to .tar.gz as there was no .tar.bz2 file anymore</li>
 <li>GNU sed 4.8</li>
