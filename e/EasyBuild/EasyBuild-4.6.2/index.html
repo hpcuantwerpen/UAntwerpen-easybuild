@@ -15,7 +15,7 @@
     
     
       
-        <title>EasyBuild-4.6.0.eb - EasyBuild - UAntwerpen-modules documentation</title>
+        <title>EasyBuild-4.6.2.eb - EasyBuild - UAntwerpen-modules documentation</title>
       
     
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#easybuild-460eb" class="md-skip">
+        <a href="#easybuild-462eb" class="md-skip">
           Skip to content
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              EasyBuild-4.6.0.eb - EasyBuild
+              EasyBuild-4.6.2.eb - EasyBuild
             
           </span>
         </div>
@@ -941,11 +941,11 @@
 
 
 <p><a href="../">[EasyBuild]</a> <a href="../../..">[package list]</a></p>
-<h1 id="easybuild-460eb">EasyBuild-4.6.0.eb</h1>
+<h1 id="easybuild-462eb">EasyBuild-4.6.2.eb</h1>
 <div class="highlight"><pre><span></span><code><span class="n">easyblock</span> <span class="o">=</span> <span class="s1">&#39;EB_EasyBuildMetaCalcUA&#39;</span>
 
 <span class="n">name</span> <span class="o">=</span>    <span class="s1">&#39;EasyBuild&#39;</span>
-<span class="n">version</span> <span class="o">=</span> <span class="s1">&#39;4.6.0&#39;</span>
+<span class="n">version</span> <span class="o">=</span> <span class="s1">&#39;4.6.2&#39;</span>
 
 <span class="n">homepage</span> <span class="o">=</span> <span class="s1">&#39;https://easybuilders.github.io/easybuild&#39;</span>
 
@@ -990,11 +990,12 @@
 
 <span class="n">source_urls</span> <span class="o">=</span> <span class="p">[</span>
     <span class="c1"># easybuild-framework</span>
-    <span class="s1">&#39;https://files.pythonhosted.org/packages/4a/12/63a8d8f4f7132da62a3d81f7f385ef2b88fd41536007bf2939ea6d8f7639/&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;https://files.pythonhosted.org/packages/88/7f/67dd44ae3204cba36c66578b14e284ce5210d8217fb383eb24c1691a1bfd/&#39;</span><span class="p">,</span>
     <span class="c1"># easybuild-easyblocks</span>
-    <span class="s1">&#39;https://files.pythonhosted.org/packages/8a/7b/bbda3cd4f5c0aa0364e2f4392330e94e3d73c0c6dae703832e9a6ac7ab6c/&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;https://files.pythonhosted.org/packages/fe/52/2609eb0d2b9e9678670c2faec23b14c9c180b4a1d2494fd91c29df2a9a5e/&#39;</span><span class="p">,</span>
     <span class="c1"># easybuild-easyconfigs</span>
-    <span class="s1">&#39;https://files.pythonhosted.org/packages/07/78/41bcf3f94068a49a1d66f65711c95be02b1affeefb457e393601376ae335/&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;https://files.pythonhosted.org/packages/5c/6b/1ead89a64a19717e5b0a0c8453458e7186928a36280e9592092ee6d58273/&#39;</span><span class="p">,</span>
+
 <span class="p">]</span>
 <span class="n">sources</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">&#39;easybuild-framework-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
@@ -1002,9 +1003,9 @@
     <span class="s1">&#39;easybuild-easyconfigs-</span><span class="si">%(version)s</span><span class="s1">.tar.gz&#39;</span><span class="p">,</span>
 <span class="p">]</span>
 <span class="n">checksums</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="s1">&#39;4010e9a0e507328a2b4bc7786c0cba81e63346b1a055fa46e2b6e67453abe30f&#39;</span><span class="p">,</span>  <span class="c1"># easybuild-framework-4.6.0.tar.gz</span>
-    <span class="s1">&#39;d0e2104b3265e7f844677edb8659fd29bef4f14fab27502b8afa2b955f165756&#39;</span><span class="p">,</span>  <span class="c1"># easybuild-easyblocks-4.6.0.tar.gz</span>
-    <span class="s1">&#39;21e1a3681343708ceb3dbf895997de54706ec72fa7c79d17454a44720f298413&#39;</span><span class="p">,</span>  <span class="c1"># easybuild-easyconfigs-4.6.0.tar.gz</span>
+    <span class="s1">&#39;136a49ed40b4d7fed1b3d3d47f0f2804cb7744fd886eb9887672e85f7e820499&#39;</span><span class="p">,</span>  <span class="c1"># easybuild-framework-4.6.2.tar.gz</span>
+    <span class="s1">&#39;b88059feeb2a97c944f6a71dc88cec683fef650ac081f8563b3f312cf8fe2794&#39;</span><span class="p">,</span>  <span class="c1"># easybuild-easyblocks-4.6.2.tar.gz</span>
+    <span class="s1">&#39;b9a305200c8874852cfa3d07d72ed7295481c1b532f7579dcf1212deebcd393b&#39;</span><span class="p">,</span>  <span class="c1"># easybuild-easyconfigs-4.6.2.tar.gz</span>
 <span class="p">]</span>
 
 <span class="c1"># order matters a lot, to avoid having dependencies auto-resolved (--no-deps easy_install option doesn&#39;t work?)</span>

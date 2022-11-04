@@ -941,6 +941,46 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#technical-documentation" class="md-nav__link">
+    Technical documentation
+  </a>
+  
+    <nav class="md-nav" aria-label="Technical documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#easybuild_1" class="md-nav__link">
+    EasyBuild
+  </a>
+  
+    <nav class="md-nav" aria-label="EasyBuild">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#453-used-for-2020a-rebuild" class="md-nav__link">
+    4.5.3 used for 2020a rebuild
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#462-used-for-system-and-2022a" class="md-nav__link">
+    4.6.2 used for system and 2022a
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -959,21 +999,37 @@
 <h1 id="easybuild">EasyBuild</h1>
 <h2 id="available-easyconfigs">Available EasyConfigs</h2>
 <ul>
-<li><a href="EasyBuild-4.2.2/">EasyBuild-4.2.2.eb</a></li>
-<li><a href="EasyBuild-4.3.0/">EasyBuild-4.3.0.eb</a></li>
-<li><a href="EasyBuild-4.3.1/">EasyBuild-4.3.1.eb</a></li>
-<li><a href="EasyBuild-4.3.2/">EasyBuild-4.3.2.eb</a></li>
-<li><a href="EasyBuild-4.3.3/">EasyBuild-4.3.3.eb</a></li>
-<li><a href="EasyBuild-4.3.4/">EasyBuild-4.3.4.eb</a></li>
-<li><a href="EasyBuild-4.4.0/">EasyBuild-4.4.0.eb</a></li>
-<li><a href="EasyBuild-4.4.1/">EasyBuild-4.4.1.eb</a></li>
-<li><a href="EasyBuild-4.4.2/">EasyBuild-4.4.2.eb</a></li>
-<li><a href="EasyBuild-4.5.0/">EasyBuild-4.5.0.eb</a></li>
-<li><a href="EasyBuild-4.5.2-bare/">EasyBuild-4.5.2-bare.eb</a></li>
-<li><a href="EasyBuild-4.5.2/">EasyBuild-4.5.2.eb</a></li>
 <li><a href="EasyBuild-4.5.3/">EasyBuild-4.5.3.eb</a></li>
 <li><a href="EasyBuild-4.6.0/">EasyBuild-4.6.0.eb</a></li>
 <li><a href="EasyBuild-4.6.1/">EasyBuild-4.6.1.eb</a></li>
+<li><a href="EasyBuild-4.6.2/">EasyBuild-4.6.2.eb</a></li>
+</ul>
+<h2 id="technical-documentation">Technical documentation</h2>
+<ul>
+<li><a href="https://easybuild.io/">EasyBuild website</a></li>
+</ul>
+<h3 id="easybuild_1">EasyBuild</h3>
+<ul>
+<li><a href="https://github.com/easybuilders/easybuild-easyconfigs/tree/develop/easybuild/easyconfigs/e/EasyBuild">EasyBuild in the EasyBuilders repository</a></li>
+</ul>
+<h4 id="453-used-for-2020a-rebuild">4.5.3 used for 2020a rebuild</h4>
+<p>The EasyConfig is based on the EasyBuilders one but with several modifications:</p>
+<ul>
+<li>
+<p>Adapted the documentation to our needs.</p>
+</li>
+<li>
+<p>Use our own EasyBlock as we needed to disable an old part of the code that did not
+    work for us, but we should revisit that as the EasyBlock is also evolving.</p>
+</li>
+<li>
+<p>Used the extensions mechanism to install a bunch of additional packages to
+    enable the archspec support and the progress bar.</p>
+</li>
+</ul>
+<h4 id="462-used-for-system-and-2022a">4.6.2 used for system and 2022a</h4>
+<ul>
+<li>Straightforward port of the 4.5.3 EasyConfig.</li>
 </ul>
 <p><a href="../..">[package list]</a></p>
 
